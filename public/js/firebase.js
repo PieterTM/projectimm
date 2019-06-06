@@ -1,3 +1,9 @@
   // Get a reference to the database service
-  var database = firebase.database();
-  
+function firebaseE(){
+	var database = firebase.database();
+	var ref = database.ref('artists/vincent_van_gogh/fuzzynames');
+	var data = {
+		fuzzy: 'vincentjeeeeemoat'
+	};
+	ref.push(data);
+}
