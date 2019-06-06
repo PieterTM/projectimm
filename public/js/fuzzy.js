@@ -16,28 +16,39 @@ function searchNicknames(searchBar){
 
 	var result = document.getElementById("result");
 	resultArtist = (fuse.search(searchBar)[0]);
-	result.innerHTML = '<h2>So your looking for: ' + resultArtist['artist'] + '?</h2>';
-	var buttonNext = document.getElementById("buttonNext");
-	buttonNext.innerHTML = '<a href="#firstPage/nationality" class="active"><button onclick="firebaseE()">Next</button></a>';
-
 	if(resultArtist['artist']=='Vincent van Gogh'){
-		document.getElementById('name').style.background = "#f3f3f3 url('graphics/vincent.jpg') no-repeat";
-		document.getElementById('name').style.backgroundSize = 'cover';
+		document.getElementById('nameresult').style.background = "#f3f3f3 url('graphics/vincent.jpg') no-repeat";
+		document.getElementById('nameresult').style.backgroundSize = 'cover';
 		var id = 'vincent_van_gogh';
 	}
 	if(resultArtist['artist']=='Rembrandt van Rijn'){
-		document.getElementById('name').style.background = "#f3f3f3 url('graphics/rembrandt.jpg') no-repeat";
-		document.getElementById('name').style.backgroundSize = 'cover';
+		document.getElementById('nameresult').style.background = "#f3f3f3 url('graphics/rembrandt.jpg') no-repeat";
+		document.getElementById('nameresult').style.backgroundSize = 'cover';
 		var id = 'rembrandt_van_rijn';
 	}	
-}
+	result.innerHTML = '<h2>So your looking for: ' + resultArtist['artist'] + '?</h2>';
 
-// function addDatabase(){
-// // Get a reference to the database service
-// 	var database = firebase.database();
-// 	var ref = database.ref('artists/' + id + '/fuzzynames');
-// 	var data = {
+	var db = firebase.firestore()
+	db.collection("artists").doc(id).collection("fuzzynames").add({
+		fuzzy: value
+	})
+	.then(function(docRef) {
+	    console.log("Document written with ID: ", docRef.id);
+	})
+	.catch(function(error) {
+	    console.error("Error adding document: ", error);
+	});
+}
+//   // Get a reference to the database service
+// function firebaseE(value, id){
+// 	var db = firebase.firestore()
+// 	db.collection("artists").doc(id).collection("fuzzynames").add({
 // 		fuzzy: value
-// 	};
-// 	ref.push(data);
+// 	})
+// 	.then(function(docRef) {
+// 	    console.log("Document written with ID: ", docRef.id);
+// 	})
+// 	.catch(function(error) {
+// 	    console.error("Error adding document: ", error);
+// 	});
 // }
