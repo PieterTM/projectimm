@@ -48,6 +48,29 @@
 
 </div>
 <!-- scripts -->
+<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-firestore.js"></script>
+<script>
+    // TODO: Replace the following with your app's Firebase project configuration
+	const firebaseConfig = {
+	  apiKey: "AIzaSyDAz3I1G3SZrNTPSilVJ0wBujkAB_YoOg0",
+	  authDomain: "ropishoppa.firebaseapp.com",
+	  databaseURL: "https://ropishoppa.firebaseio.com",
+	  projectId: "ropishoppa",
+	  storageBucket: "ropishoppa.appspot.com",
+	  messagingSenderId: "1081176814939",
+	  appId: "1:1081176814939:web:a83cff5ee5b5f38a"
+	};
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+ </script>
 <script type="text/javascript" src="./js/fullpage.js"></script>
 <script type="text/javascript">
     var myFullpage = new fullpage('#fullpage', {

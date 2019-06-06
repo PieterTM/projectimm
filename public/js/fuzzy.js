@@ -22,11 +22,11 @@ function searchNicknames(searchBar){
 
 	if(resultArtist['artist']=='Vincent van Gogh'){
 		document.getElementById('name').style.background = "#f3f3f3 url('graphics/vincent.jpg') no-repeat";
-		document.getElementById('name').style.backgroundSize = 'cover'
+		document.getElementById('name').style.backgroundSize = 'cover';
 	}
 	if(resultArtist['artist']=='Rembrandt van Rijn'){
 		document.getElementById('name').style.background = "#f3f3f3 url('graphics/rembrandt.jpg') no-repeat";
-		document.getElementById('name').style.backgroundSize = 'cover'
+		document.getElementById('name').style.backgroundSize = 'cover';
 	}
 
 }
