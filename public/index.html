@@ -17,6 +17,7 @@
 	<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-auth.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-firestore.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-database.js"></script>
+	<link href="css/bootstrap-form-helpers.min.css" rel="stylesheet" media="screen">
 </head>
 
 <body>
@@ -82,7 +83,18 @@
 					</div>
 				</div>
 			</div>
-		</div>		
+		</div>
+		<div class="slide" id="nationalityslide" data-anchor="nationality">
+			<div class="container">
+	  			<div class="row">
+					<div class="intro">
+						<div id="nationality">test</div>
+						<h2>Next up, where is the artwork from?</h2>
+						<div class="bfh-selectbox bfh-countries" data-country="US" data-flags="true">test</div>
+					</div>
+				</div>
+			</div>
+		</div>				
 	</div>
 
 	<div class="section">
@@ -119,6 +131,7 @@ firebase.initializeApp(firebaseConfig);
         
     });
 </script>
+<script src="js/bootstrap-formhelpers.min.js"></script>
 </body>
 
 </html>

@@ -18,6 +18,7 @@ button {
   display: inline-block;
   font-size: 16px;
   cursor: pointer;
+  margin: 10px;
 }
 ul {
   list-style-type: none;
@@ -84,7 +85,7 @@ label img {
   z-index: -1;
 }
 .red {
-  background-color: red;
+  background-color: #c64c45;
 }
 .intro {
   text-align: center;
