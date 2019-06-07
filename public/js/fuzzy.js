@@ -101,6 +101,34 @@ function searchNicknames(searchBar){
 			createResult();
 			return;
 		}
+				if(resultArtist['artist']=='Ludolf Bakhuysen'){
+			document.getElementById('nameresult').style.background = "#f3f3f3 url('graphics/ludolf.jpg') no-repeat";
+			document.getElementById('nameresult').style.backgroundSize = 'cover';
+			window.artistID = 'ludolf_bakhuysen';
+			createResult();
+			return;
+		}
+		if(resultArtist['artist']=='Nicolaes Pietersz Berchem'){
+			document.getElementById('nameresult').style.background = "#f3f3f3 url('graphics/nicolaes.jpg') no-repeat";
+			document.getElementById('nameresult').style.backgroundSize = 'cover';
+			window.artistID = 'nicolaes_pietersz_berchem';
+			createResult();
+			return;
+		}
+		if(resultArtist['artist']=='Gerrit Adriaensz Berckheyde'){
+			document.getElementById('nameresult').style.background = "#f3f3f3 url('graphics/gerrit.jpg') no-repeat";
+			document.getElementById('nameresult').style.backgroundSize = 'cover';
+			window.artistID = 'gerrit_adriaensz_berckheyde';
+			createResult();
+			return;
+		}
+		if(resultArtist['artist']=='Joachim Beuckelaer'){
+			document.getElementById('nameresult').style.background = "#f3f3f3 url('graphics/joachim.jpg') no-repeat";
+			document.getElementById('nameresult').style.backgroundSize = 'cover';
+			window.artistID = 'joachim_beuckelaer';
+			createResult();
+			return;
+		}
 	}
 	catch{
 		noResult();
