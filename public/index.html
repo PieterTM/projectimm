@@ -26,9 +26,10 @@
 			<div class="container">
 	  			<div class="row">
 					<div class="intro">
-						<h2>Welcome to [naam]</h2>
-						<h3>Vrije Universiteit in collaboration with the Rijksmuseum</h3>
-						<a href="#firstPage/databases"><button>Next step</button></a>
+						<img src="graphics/logo.png" height="150px">
+						<h2>The center of the web, where all loose ends come together.</h2>
+						<p>Vrije Universiteit in collaboration with the Rijksmuseum</p>
+						<a href="#firstPage/databases"><button>Start searching</button></a>
 					</div>
 				</div>
 			</div>
@@ -52,6 +53,7 @@
 							<label for="cb4"><img src="graphics/getty.jpg" /></label>
 							</li>
 						</ul>
+						<a href="#firstPage/welcome"><button class="red">Previous step</button></a>
 						<a href="#firstPage/name"><button>Next step</button></a>
 					</div>
 				</div>
@@ -63,6 +65,7 @@
 					<div class="intro">
 						<h2>From which artist is the artwork?</h2>
 						<div><input type="text" placeholder="e.g. Vincent van Gogh" id="searchartist"></div>
+						<a href="#firstPage/databases"><button class="red">Previous step</button></a>
 						<a href="#firstPage/nameresult" class="active"><button onclick="searchNicknames(document.getElementById('searchartist').value);">Next step</button></a>
 					</div>
 				</div>
@@ -72,9 +75,10 @@
 			<div class="container">
 	  			<div class="row">
 					<div class="intro">
-						<div id="result"><h2>Please finish step 1</h2></div>
-						<a class="active"><button class="red">No</button></a>
-						<a class="active" onclick="addToDatabase()"><button>Yes</button></a>
+						<div id="result">
+							<h2>Please finish step 1</h2>
+							<a href="#firstPage/name"><button>Go to step 1</button></a>
+						</div>
 					</div>
 				</div>
 			</div>
