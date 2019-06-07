@@ -101,7 +101,7 @@ function searchNicknames(searchBar){
 			createResult();
 			return;
 		}
-				if(resultArtist['artist']=='Ludolf Bakhuysen'){
+		if(resultArtist['artist']=='Ludolf Bakhuysen'){
 			document.getElementById('nameresult').style.background = "#f3f3f3 url('graphics/ludolf.jpg') no-repeat";
 			document.getElementById('nameresult').style.backgroundSize = 'cover';
 			window.artistID = 'ludolf_bakhuysen';
