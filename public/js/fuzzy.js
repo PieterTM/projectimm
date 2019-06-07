@@ -6,6 +6,38 @@ var artists = [{
 	  'artist': 'Rembrandt van Rijn',
 	  'nicknames': ['Brandrem van Rijn'],
 	  'image': "./graphics/rembrandtpic.jpg"
+	}, {
+	  'artist': "Pieter Aertsen",
+	  'nicknames': ['Peter Artsen'],
+	  'image': "./graphics/vincentpic.jpg"
+	}, {
+	  'artist': 'Lawrence Alma Tadema',
+	  'nicknames': ['Lourens Tademma'],
+	  'image': "./graphics/rembrandtpic.jpg"
+	}, {
+	  'artist': 'Karel Appel',
+	  'nicknames': ['Carl Apple'],
+	  'image': "./graphics/rembrandtpic.jpg"
+	}, {
+	  'artist': "Dirck van Baburen",
+	  'nicknames': ['Derrick van Babburen'],
+	  'image': "./graphics/vincentpic.jpg"
+	}, {
+	  'artist': 'Ludolf Bakhuysen',
+	  'nicknames': ['Rudolf Bakhuizen'],
+	  'image': "./graphics/rembrandtpic.jpg"
+	}, {
+	  'artist': 'Nicolaes Pietersz Berchem',
+	  'nicknames': ['Nicholas Pieters Bergem'],
+	  'image': "./graphics/rembrandtpic.jpg"
+	}, {
+	  'artist': "Gerrit Adriaensz Berckheyde",
+	  'nicknames': ['Gerit Adrieans Berkhyde'],
+	  'image': "./graphics/vincentpic.jpg"
+	}, {
+	  'artist': 'Joachim Beuckelaer',
+	  'nicknames': ['Jochem Buckelaer'],
+	  'image': "./graphics/rembrandtpic.jpg"
 	}]
 
 var options = {
@@ -31,6 +63,41 @@ function searchNicknames(searchBar){
 			document.getElementById('nameresult').style.background = "#f3f3f3 url('graphics/rembrandt.jpg') no-repeat";
 			document.getElementById('nameresult').style.backgroundSize = 'cover';
 			window.artistID = 'rembrandt_van_rijn';
+			createResult();
+			return;
+		}
+		if(resultArtist['artist']=='Pieter Aertsen'){
+			document.getElementById('nameresult').style.background = "#f3f3f3 url('graphics/pieter.jpg') no-repeat";
+			document.getElementById('nameresult').style.backgroundSize = 'cover';
+			window.artistID = 'pieter_aertsen';
+			createResult();
+			return;
+		}
+		if(resultArtist['artist']=='Lawrence Alma Tadema'){
+			document.getElementById('nameresult').style.background = "#f3f3f3 url('graphics/lawrence.jpg') no-repeat";
+			document.getElementById('nameresult').style.backgroundSize = 'cover';
+			window.artistID = 'lawrence_alma_tadema';
+			createResult();
+			return;
+		}
+		if(resultArtist['artist']=='Karel Appel'){
+			document.getElementById('nameresult').style.background = "#f3f3f3 url('graphics/karel.jpg') no-repeat";
+			document.getElementById('nameresult').style.backgroundSize = 'cover';
+			window.artistID = 'karel_appel';
+			createResult();
+			return;
+		}
+		if(resultArtist['artist']=='Hendrick Avercamp'){
+			document.getElementById('nameresult').style.background = "#f3f3f3 url('graphics/hendrick.jpg') no-repeat";
+			document.getElementById('nameresult').style.backgroundSize = 'cover';
+			window.artistID = 'hendrick_avercamp';
+			createResult();
+			return;
+		}
+		if(resultArtist['artist']=='Dirck van Baburen'){
+			document.getElementById('nameresult').style.background = "#f3f3f3 url('graphics/dirck.jpg') no-repeat";
+			document.getElementById('nameresult').style.backgroundSize = 'cover';
+			window.artistID = 'dirck_van_baburen';
 			createResult();
 			return;
 		}
