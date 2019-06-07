@@ -6,7 +6,39 @@ var artists = [{
 	  'artist': 'Rembrandt van Rijn',
 	  'nicknames': ['Brandrem van Rijn'],
 	  'image': "./graphics/rembrandtpic.jpg"
-	}]
+	}, {
+	  'artist': "Pieter Aertsen",
+	  'nicknames': ['Peter Artsen'],
+	  'image': "./graphics/vincentpic.jpg"
+	}, {
+	  'artist': 'Lawrence Alma Tadema',
+	  'nicknames': ['Lourens Tademma'],
+	  'image': "./graphics/rembrandtpic.jpg"
+	}, {
+	  'artist': 'Karel Appel',
+	  'nicknames': ['Carl Apple'],
+	  'image': "./graphics/rembrandtpic.jpg"
+	}, {
+	  'artist': "Dirck van Baburen",
+	  'nicknames': ['Derrick van Babburen'],
+	  'image': "./graphics/vincentpic.jpg"
+	}, {
+	  'artist': 'Ludolf Bakhuysen',
+	  'nicknames': ['Rudolf Bakhuizen'],
+	  'image': "./graphics/rembrandtpic.jpg"
+	}, {
+	  'artist': 'Nicolaes Pietersz Berchem',
+	  'nicknames': ['Nicholas Pieters Bergem'],
+	  'image': "./graphics/rembrandtpic.jpg"
+	}, {
+	  'artist': "Gerrit Adriaensz Berckheyde",
+	  'nicknames': ['Gerit Adrieans Berkhyde'],
+	  'image': "./graphics/vincentpic.jpg"
+	}, {
+	  'artist': 'Joachim Beuckelaer',
+	  'nicknames': ['Jochem Buckelaer'],
+	  'image': "./graphics/rembrandtpic.jpg"
+	}];
 
 var options = {
 	minMatchCharLength: 4,
@@ -69,7 +101,7 @@ function searchNicknames(searchBar){
 			createResult();
 			return;
 		}
-				if(resultArtist['artist']=='Ludolf Bakhuysen'){
+		if(resultArtist['artist']=='Ludolf Bakhuysen'){
 			document.getElementById('nameresult').style.background = "#f3f3f3 url('graphics/ludolf.jpg') no-repeat";
 			document.getElementById('nameresult').style.backgroundSize = 'cover';
 			window.artistID = 'ludolf_bakhuysen';
