@@ -27,7 +27,7 @@ function searchNicknames(searchBar){
 		document.getElementById('nameresult').style.backgroundSize = 'cover';
 		window.artistID = 'rembrandt_van_rijn';
 	}	
-	result.innerHTML = '<div><img src="./graphics/vincentpic.jpg" height="200px"></div><h2>So your looking for: ' + resultArtist['artist'] + '?</h2>';
+	result.innerHTML = '<div><img src="./graphics/vincentpic.jpg" height="200px"></div><h2>So you are looking for: ' + resultArtist['artist'] + '?</h2>';
 }
 
 function addToDatabase(){
