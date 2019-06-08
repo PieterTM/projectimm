@@ -46,6 +46,9 @@ var options = {
 };
 
 var fuse = new Fuse(artists, options);
+var nodes = null;
+var edges = null;
+var network = null;
 
 function searchNicknames(searchBar){
 	var result = document.getElementById("result");
@@ -161,14 +164,48 @@ function nextSlide(){
 
 function createResult(){
 	var db = firebase.firestore();
+	window.fuzzyNamez = [{id: 1, shape: 'circularImage', image: resultArtist['image'], label:resultArtist['artist'], size:40}];
+	var counter = 0;
 	db.collection("artists").doc(window.artistID).collection("fuzzynames").get().then(function(querySnapshot) {
 	    querySnapshot.forEach(function(doc) {
-	        console.log(doc.data().fuzzy);
+	    	window.fuzzyNamez.push({id: counter+2,  shape: 'circularImage', image: '', label: doc.data().fuzzy});
+	    	counter += 1;
+	        // window.fuzzyNamez.push(doc.data().fuzzy);
 	    });
 	});
+	console.log(fuzzyNamez);
 	result.innerHTML = '<div><img src="' + resultArtist['image'] + '" height="200px"></div><h2>So with \''+ searchBar + '\' you mean: ' + resultArtist['artist'] + '?</h2><a class="active"><button class="red">No</button></a><a class="active" onclick="addToDatabase()" href="#firstPage/nationality"><button>Yes</button></a>'
 }
 function noResult(){
 	result.innerHTML = '<div><h2>No result found</h2></div>'
 	document.getElementById('nameresult').style.background = "";
+}
+
+function visualizeFuzzy(){
+	// create connections between people
+
+	edges = [];
+	for(var i =2; i<=window.fuzzyNamez.length; i++){
+	edges.push({from: 1, to: i});
+	}
+
+	var container = document.getElementById('mynetwork');
+	container.style.height = "23vw";
+	var data = {
+	nodes: window.fuzzyNamez,
+	edges: edges
+	};
+	var options = {
+
+	nodes: {
+	    size:20,
+	      color: {
+	      background: '#d1cff9'
+	    },
+	    font:{color:'#eeeeee', "size": 10},
+	},
+
+	};
+	network = new vis.Network(container, data, options);
+
 }

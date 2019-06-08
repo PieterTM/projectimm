@@ -17,7 +17,8 @@
 	<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-auth.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-firestore.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-database.js"></script>
-	<link href="css/bootstrap-form-helpers.min.css" rel="stylesheet" media="screen">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.js"></script>
+  	<link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis-network.min.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -28,7 +29,7 @@
 	  			<div class="row">
 					<div class="intro">
 						<img src="graphics/logo.png" height="150px">
-						<h2>The center of the web, where all loose ends come together.</h2>
+						<h2>The center of the web, where all loose ends come togethers.</h2>
 						<p>Vrije Universiteit in collaboration with the Rijksmuseum</p>
 						<a href="#firstPage/databases"><button>Start searching</button></a>
 					</div>
@@ -90,7 +91,11 @@
 					<div class="intro">
 						<div id="nationality">test</div>
 						<h2>Next up, where is the artwork from?</h2>
-						<div class="bfh-selectbox bfh-countries" data-country="US" data-flags="true">test</div>
+						<div><input type="text" placeholder="e.g. Nederland" id="searchartist"></div>
+						<a href="#firstPage/nameresult"><button class="red">Previous step</button></a>
+						<a href="#firstPage/nationality" class="active"><button>Next step</button></a>
+						<p onclick="visualizeFuzzy()">Click here to see how you have helped.</p>
+						<div id="mynetwork"></div>
 					</div>
 				</div>
 			</div>
@@ -131,7 +136,6 @@ firebase.initializeApp(firebaseConfig);
         
     });
 </script>
-<script src="js/bootstrap-formhelpers.min.js"></script>
 </body>
 
 </html>
