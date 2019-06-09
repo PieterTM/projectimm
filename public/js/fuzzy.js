@@ -19,6 +19,10 @@ var artists = [{
 	  'nicknames': ['Karl Apple'],
 	  'image': "./graphics/karelpic.jpg"
 	}, {
+	  'artist': 'Hendrick Avercamp',
+	  'nicknames': ['Hendrik Averkamp'],
+	  'image': "./graphics/hendrickpic.jpg"
+	}, {
 	  'artist': "Dirck van Baburen",
 	  'nicknames': ['Derrick van Babburen'],
 	  'image': "./graphics/dirckpic.jpg"
