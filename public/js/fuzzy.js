@@ -9,35 +9,35 @@ var artists = [{
 	}, {
 	  'artist': "Pieter Aertsen",
 	  'nicknames': ['Peter Artsen'],
-	  'image': "./graphics/vincentpic.jpg"
+	  'image': "./graphics/pieterpic.jpg"
 	}, {
 	  'artist': 'Lawrence Alma Tadema',
 	  'nicknames': ['Lourens Tademma'],
-	  'image': "./graphics/rembrandtpic.jpg"
+	  'image': "./graphics/lawrencepic.jpg"
 	}, {
 	  'artist': 'Karel Appel',
-	  'nicknames': ['Carl Apple'],
-	  'image': "./graphics/rembrandtpic.jpg"
+	  'nicknames': ['Karl Apple'],
+	  'image': "./graphics/karelpic.jpg"
 	}, {
 	  'artist': "Dirck van Baburen",
 	  'nicknames': ['Derrick van Babburen'],
-	  'image': "./graphics/vincentpic.jpg"
+	  'image': "./graphics/dirckpic.jpg"
 	}, {
 	  'artist': 'Ludolf Bakhuysen',
 	  'nicknames': ['Rudolf Bakhuizen'],
-	  'image': "./graphics/rembrandtpic.jpg"
+	  'image': "./graphics/ludolfpic.jpg"
 	}, {
 	  'artist': 'Nicolaes Pietersz Berchem',
 	  'nicknames': ['Nicholas Pieters Bergem'],
-	  'image': "./graphics/rembrandtpic.jpg"
+	  'image': "./graphics/nicolaespic.jpg"
 	}, {
 	  'artist': "Gerrit Adriaensz Berckheyde",
 	  'nicknames': ['Gerit Adrieans Berkhyde'],
-	  'image': "./graphics/vincentpic.jpg"
+	  'image': "./graphics/gerritpic.jpg"
 	}, {
 	  'artist': 'Joachim Beuckelaer',
 	  'nicknames': ['Jochem Buckelaer'],
-	  'image': "./graphics/rembrandtpic.jpg"
+	  'image': "./graphics/joachimpic.jpg"
 	}];
 
 var options = {
