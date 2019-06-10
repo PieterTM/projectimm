@@ -23,13 +23,31 @@
 
 <body>
 <div id="fullpage">
+<!-- <nav class="navbar navbar-default navbar-fixed-top">
+  <div class="intro">
+	<img src="graphics/logo.png" height="100px">
+  </div>
+</nav> -->
 	<div class="section">
 		<div class="slide" id="welcome" data-anchor="welcome">
 			<div class="container">
 	  			<div class="row">
 					<div class="intro">
 						<div>
-							<img src="graphics/homepage.png" height="100px">
+						<ul>
+							<li><input type="checkbox" id="cb5" />
+							<label for="cb1"><img src="graphics/getty.jpg" /></label>
+							</li>
+							<li><input type="checkbox" id="cb6" />
+							<label for="cb2"><img src="graphics/rkd.png" /></label>
+							</li>
+							<li><input type="checkbox" id="cb7" />
+							<label for="cb3"><img src="graphics/frick.jpg" /></label>
+							</li>
+							<li><input type="checkbox" id="cb8" />
+							<label for="cb4"><img src="graphics/rijksmuseum.png" /></label>
+							</li>
+						</ul>
 						</div>
 						<input class="homepageInput" id="typetext" type="text" value="" ><br>
 						<p style="font-size: 19px;">Waisting time on filling in countless similar forms on multiple sites?</p>
@@ -82,7 +100,7 @@
 					<div class="intro">
 						<div id="result">
 							<h2>Please finish step 1</h2>
-							<a href="#firstPage/name"><button>Go to step 1</button></a>
+							<a href="#firstPage/name"><button class="red">< Go to step 1</button></a>
 						</div>
 					</div>
 				</div>
@@ -92,12 +110,12 @@
 			<div class="container">
 	  			<div class="row">
 					<div class="intro">
-						<div id="nationality">test</div>
+						<p style="font-size: 19px; font-weight: 200" id="nationality">test</p>
 						<h2>Next up, where is the artwork from?</h2>
 						<div><input type="text" placeholder="e.g. Nederland" id="searchartist"></div>
 						<a href="#firstPage/nameresult"><button class="red">< Previous step</button></a>
 						<a href="#firstPage/search" class="active"><button>Next step ></button></a>
-						<p onclick="visualizeFuzzy()">Click here to see how you have helped.</p>
+						<p style="text-decoration: underline; cursor: pointer;" onclick="visualizeFuzzy()">Click here to see all the search queries</p>
 						<div id="mynetwork"></div>
 					</div>
 				</div>
@@ -117,10 +135,10 @@
 		</div>					
 	</div>
 
-	<div class="section">
+<!-- 	<div class="section">
 		<div class="intro">
 		</div>
-	</div>
+	</div> -->
 
 </div>
 <!-- scripts -->
@@ -174,6 +192,16 @@ setTimeout(function () {
   clearInterval(interval);
   $('.clock').html(rMin.slice(-2) + ':00');
 }, 5000000);
+</script>
+<script type="text/javascript">
+	setInterval(function(){document.getElementById("cb5").checked = true},1000);
+	setInterval(function(){document.getElementById("cb6").checked = true},1500);
+	setInterval(function(){document.getElementById("cb7").checked = true},2000);
+	setInterval(function(){document.getElementById("cb8").checked = true},2400);
+	setInterval(function(){document.getElementById("cb5").checked = false},3200);
+	setInterval(function(){document.getElementById("cb6").checked = false},3000);
+	setInterval(function(){document.getElementById("cb7").checked = false},3700);
+	setInterval(function(){document.getElementById("cb8").checked = false},3400);
 </script>
 </body>
 

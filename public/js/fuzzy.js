@@ -163,7 +163,7 @@ function addToDatabase(){
 
 function nextSlide(){
 	var nationalityDiv = document.getElementById('nationality');
-	nationalityDiv.innerHTML = '<p>Great, you have just helped 312289 other people by adding your way of writing ' + resultArtist['artist'] + ' to tour database!</p>';
+	nationalityDiv.innerHTML = 'Great, you helped 312289 people by providing your way of writing ' + resultArtist['artist'] + ' to tour database!';
 }
 
 function createResult(){
