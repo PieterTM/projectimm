@@ -5,20 +5,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8">
 	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="css/fullpage.css" />
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.4.5/fuse.min.js"></script>
 	<script src="js/fuzzy.js"></script>
 	<script src="js/firebase.js"></script>
-		<!-- Add Firebase products that you want to use -->
-		<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-firestore.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-database.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.js"></script>
-  	<link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis-network.min.css" rel="stylesheet" type="text/css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.js"></script>
+  	<link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis-network.min.css">
 </head>
 
 <body>
@@ -112,7 +109,15 @@
 					<div class="intro">
 						<p style="font-size: 19px; font-weight: 200" id="nationality">test</p>
 						<h2>Next up, where is the artwork from?</h2>
-						<div><input type="text" placeholder="e.g. Nederland" id="searchartist"></div>
+						<div>
+							<p>Based on your slection, we think the artwork is from Holland. <span class="glyphicon glyphicon-info-sign"></span></p>
+							<select>
+								<option value="holland">Holland</option>
+								<option value="saab">England</option>
+								<option value="mercedes">Italy</option>
+								<option value="audi">Etc.</option>
+							</select>
+						</div>
 						<a href="#firstPage/nameresult"><button class="red">< Previous step</button></a>
 						<a href="#firstPage/search" class="active"><button>Next step ></button></a>
 						<p style="text-decoration: underline; cursor: pointer;" onclick="visualizeFuzzy()">Click here to see all the search queries</p>
