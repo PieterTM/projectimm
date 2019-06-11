@@ -172,7 +172,7 @@ function createResult(){
 	var counter = 0;
 	db.collection("artists").doc(window.artistID).collection("fuzzynames").get().then(function(querySnapshot) {
 	    querySnapshot.forEach(function(doc) {
-	    	window.fuzzyNamez.push({id: counter+2,  shape: 'circularImage', image: '', label: doc.data().fuzzy});
+	    	window.fuzzyNamez.push({id: counter+2,  shape: 'circularImage', image: './graphics/profilepic.png', label: doc.data().fuzzy});
 	    	counter += 1;
 	        // window.fuzzyNamez.push(doc.data().fuzzy);
 	    });
