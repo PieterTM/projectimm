@@ -85,6 +85,46 @@ label img {
   box-shadow: 0 0 5px #333;
   z-index: -1;
 }
+.card-img-top {
+    width: 100%;
+    border-top-right-radius: .25rem;
+    border-top-left-radius: .25rem;
+}
+svg {
+    overflow: hidden;
+    vertical-align: middle;
+}
+.goto{
+  width: 100%;
+  background-color: #dddddd;
+  color: black;
+  margin: 0;
+  height: 37px;
+  padding: 0;
+  font-size: 12px;
+}
+.goto:hover{
+  background-color: #cccccc;
+}
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border-bottom-right-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+}
+.card-text{
+  padding: 1.25rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: black;
+}
 .inner-form {
   background: #fff;
   display: -ms-flexbox;
