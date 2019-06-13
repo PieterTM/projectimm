@@ -215,14 +215,8 @@ function visualizeFuzzy(){
 }
 
 function generateResults(){
-$.ajax({
-    data: 'searchBar=' + searchBar,
-    url: 'test.php',
-    method: 'GET', // or GET
-    success: function(msg) {
-        alert(msg);
-    }
-});
+$.get("/js/test.php?searchBar="+searchBar);
+    return false;
 }
 	// if (window.XMLHttpRequest) {
 	//       // code for IE7+, Firefox, Chrome, Opera, Safari
