@@ -215,22 +215,15 @@ function visualizeFuzzy(){
 }
 
 function generateResults(){
-var request = new XMLHttpRequest()
-
-request.open('GET', 'https://api.rkd.nl/api/instant/images?query=' + searchBar + '&format=json', true)
-request.onload = function() {
-  // Begin accessing JSON data here
-  var data = JSON.parse(this.response)
-
-  if (request.status >= 200 && request.status < 400) {
-    console.log(data);
-  } else {
-    console.log('error')
-  }
+$.ajax({
+    data: 'searchBar=' + searchBar,
+    url: 'test.php',
+    method: 'GET', // or GET
+    success: function(msg) {
+        alert(msg);
+    }
+});
 }
-
-request.send()
-
 	// if (window.XMLHttpRequest) {
 	//       // code for IE7+, Firefox, Chrome, Opera, Safari
 	//       xmlhttp = new XMLHttpRequest();
@@ -248,8 +241,10 @@ request.send()
 	//   xmlhttp.open("GET","https://api.rkd.nl/api/instant/images?query=" + searchBar + "&format=json",true);
 	//   xmlhttp.send();
 	// }
-}
+
 function displayResults(result){
+	result = JSON.parse(result);
+	console.log(result);
 	var searchresults = document.getElementById('searchresults');
 	searchresults.innerHTML = '<div class="col-md-3">\
 									<div class="intro">\
