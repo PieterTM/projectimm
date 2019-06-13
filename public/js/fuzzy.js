@@ -139,12 +139,12 @@ function searchNicknames(searchBar){
 		else{
 			result.innerHTML = '<div><h2>No result found</h2></div>'
 		}
-	};
+	}
 	catch{
 		if (searchBar.length>3) {
 			noResult();
 		}
-	};
+	}
 }
 
 function addToDatabase(){
@@ -211,5 +211,81 @@ function visualizeFuzzy(){
 
 	};
 	network = new vis.Network(container, data, options);
+
+}
+
+function generateResults(){
+var request = new XMLHttpRequest()
+
+request.open('GET', 'https://api.rkd.nl/api/instant/images?query=' + searchBar + '&format=json', true)
+request.onload = function() {
+  // Begin accessing JSON data here
+  var data = JSON.parse(this.response)
+
+  if (request.status >= 200 && request.status < 400) {
+    console.log(data);
+  } else {
+    console.log('error')
+  }
+}
+
+request.send()
+
+	// if (window.XMLHttpRequest) {
+	//       // code for IE7+, Firefox, Chrome, Opera, Safari
+	//       xmlhttp = new XMLHttpRequest();
+	//   } else {
+	//       // code for IE6, IE5
+	//       xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+	//   }
+	//   xmlhttp.onreadystatechange = function() {
+	//   	if (this.readyState == 4 && this.status == 200) {
+	//   		var result = JSON.parse(this.responseText);
+	// 	  	displayResults(result);
+	//   	}
+	//   };
+
+	//   xmlhttp.open("GET","https://api.rkd.nl/api/instant/images?query=" + searchBar + "&format=json",true);
+	//   xmlhttp.send();
+	// }
+}
+function displayResults(result){
+	var searchresults = document.getElementById('searchresults');
+	searchresults.innerHTML = '<div class="col-md-3">\
+									<div class="intro">\
+										<svg class="card-img-top" width="100%" height="150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><image xlink:href="graphics/rembrandt.jpg" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">De nachtwacht</text></svg>\
+										<div class="card">\
+								        	<p class="card-text">' + result.response.docs[0].benaming_kunstwerk[0] + '</p>\
+								        	<button class="goto">Go to...</button>\
+								        </div>\
+									</div>\
+								</div>\
+								<div class="col-md-3">\
+									<div class="intro">\
+										<svg class="card-img-top" width="100%" height="150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><image xlink:href="graphics/rembrandt.jpg" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">De nachtwacht</text></svg>\
+										<div class="card">\
+								        	<p class="card-text">' + result.response.docs[1].benaming_kunstwerk[0] + '</p>\
+								        	<button class="goto">Go to...</button>\
+								        </div>\
+									</div>\
+								</div>\
+								<div class="col-md-3">\
+									<div class="intro">\
+										<svg class="card-img-top" width="100%" height="150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><image xlink:href="graphics/rembrandt.jpg" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">De nachtwacht</text></svg>\
+										<div class="card">\
+								        	<p class="card-text">' + result.response.docs[2].benaming_kunstwerk[0] + '</p>\
+								        	<button class="goto">Go to...</button>\
+								        </div>\
+									</div>\
+								</div>\
+								<div class="col-md-3">\
+									<div class="intro">\
+										<svg class="card-img-top" width="100%" height="150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><image xlink:href="graphics/rembrandt.jpg" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">De nachtwacht</text></svg>\
+										<div class="card">\
+								        	<p class="card-text">' + result.response.docs[3].benaming_kunstwerk[0] + '</p>\
+								        	<button class="goto">Go to...</button>\
+								        </div>\
+									</div>\
+								</div>'
 
 }
