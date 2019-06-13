@@ -16,6 +16,8 @@
   	<link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis-network.min.css">
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="https://www.jqueryscript.net/demo/Filterable-Country-Picker-niceCountryInput/niceCountryInput.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://www.jqueryscript.net/demo/Filterable-Country-Picker-niceCountryInput/niceCountryInput.css">
 </head>
 
 <body>
@@ -119,12 +121,19 @@
 						<h2 style="display: inline-block;">Next up, where is the artwork from? <div class="tooltip"><span style="font-size: 16px; vertical-align: top;" class="glyphicon glyphicon-info-sign"><span class="tooltiptext">Hello, here is the info about this question.</span></span></div></h2>
 						<div>
 							<p style="display: inline-block;">Based on your slection, we think the artwork is from Holland. <div class="tooltip"><span style="font-size: 11px; vertical-align: top;" class="glyphicon glyphicon-info-sign"><span class="tooltiptext">Hello, here is the info about this question.</span></span></div></p>
-							<select>
-								<option value="holland">Holland</option>
-								<option value="saab">England</option>
-								<option value="mercedes">Italy</option>
-								<option value="audi">Etc.</option>
-							</select>
+							<div class="niceCountryInputSelector" data-selectedcountry="NL" data-showspecial="false" data-showflags="true" data-i18nall="All selected" data-i18nnofilter="No selection" data-i18nfilter="Filter" data-onchangecallback="onChangeCallback" />
+							</div>
+							<script>
+								function onChangeCallback(ctr){
+									console.log("The country was changed: " + ctr);
+									//$("#selectionSpan").text(ctr);
+								}
+								$(document).ready(function () {
+									$(".niceCountryInputSelector").each(function(i,e){
+										new NiceCountryInput(e).init();
+									});
+								});
+							</script>
 						</div>
 						<a href="#firstPage/nameresult"><button class="red"><span class="glyphicon glyphicon-chevron-left"></span> Previous step</button></a>
 						<a href="#firstPage/search" class="active"><button>Next step <span class="glyphicon glyphicon-chevron-right"></span></button></a>

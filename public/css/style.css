@@ -355,6 +355,51 @@ article:hover a {
   border: none;
   margin-top: 50px;
 }
+.niceCountryInputSelector {
+    color: black;
+    font-size: 21px;
+    text-align: left;
+    width: 80%;
+    margin: 10px auto;
+    display: block;
+}
+.niceCountryInputMenu {
+  height: 50px;
+  line-height: 50px;
+  border:none;
+  box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
+}
+
+.niceCountryInputMenu, .niceCountryInputMenuDropdown {
+  height: 50px;
+  line-height: 50px;
+  border:none;
+}
+
+.niceCountryInputMenuDefaultText {
+    width: auto;
+    display: inline;
+    vertical-align: middle;
+}
+.niceCountryInputMenuDropdown span {
+  vertical-align: middle;
+}
+.niceCountryInputMenuCountryFlag {
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+.niceCountryInputMenuFilter input {
+  padding: inherit;
+  margin-bottom: 0;
+}
+.niceCountryInputMenuDropdownContent a {
+  color: rgb(255,255,255) !important;
+  height: 30px;
+  line-height: 30px;
+}
+.niceCountryInputMenuDropdownContent a:hover {
+  background-color: rgba(0,0,0,0.4) !important;
+}
 @media only screen and (max-width: 600px) {
   .container{
     padding: 0;
