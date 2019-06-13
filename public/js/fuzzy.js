@@ -137,14 +137,14 @@ function searchNicknames(searchBar){
 			return;
 		}
 		else{
-			result.innerHTML = '<div><h2>No result foundee</h2></div>'
+			result.innerHTML = '<div><h2>No result found</h2></div>'
 		}
-	}
+	};
 	catch{
 		if (searchBar.length>3) {
 			noResult();
 		}
-	}
+	};
 }
 
 function addToDatabase(){

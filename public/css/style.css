@@ -87,8 +87,48 @@ label img {
 }
 .card-img-top {
     width: 100%;
-    border-top-right-radius: .25rem;
-    border-top-left-radius: .25rem;
+/*    border-top-right-radius: .99rem;*/
+    border-top-left-radius: .99rem;
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+  opacity: 100;
+  vertical-align: top;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 220px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 15px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -110px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }
 svg {
     overflow: hidden;
@@ -102,6 +142,7 @@ svg {
   height: 37px;
   padding: 0;
   font-size: 12px;
+    border-bottom-right-radius: .99rem;
 }
 .goto:hover{
   background-color: #cccccc;
@@ -116,8 +157,9 @@ svg {
     word-wrap: break-word;
     background-color: #fff;
     background-clip: border-box;
-    border-bottom-right-radius: .25rem;
+    border-bottom-right-radius: .99rem;
     border-bottom-left-radius: .25rem;
+    margin-bottom: 20px;
 }
 .card-text{
   padding: 1.25rem;
