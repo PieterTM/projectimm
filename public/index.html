@@ -33,9 +33,9 @@
 			<div class="container">
 	  			<div class="row">
 					<div class="intro">
-						<img src="graphics/logo.png" height="60px">
+						<img src="graphics/logo.png" class="logo">
 						<p  style="margin-bottom: 20px;"><small>An application by Pieter Greefhorst, Rowan Suurmond and Juliet Karikari</small></p>
-						<div>
+						<!-- <div>
 						<ul>
 							<li><input type="checkbox" id="cb5" />
 							<label for="cb1"><img src="graphics/getty.jpg" /></label>
@@ -50,10 +50,10 @@
 							<label for="cb4"><img src="graphics/rijksmuseum.png" /></label>
 							</li>
 						</ul>
-						</div>
+						</div> -->
 						<div class="inner-form">
 			         		<div class="input-field second-wrap">
-			           			<input class="homepageInput" id="typetext" type="text" value="">
+			           			<input onclick="window.location.href='#firstPage/databases'" class="homepageInput" id="typetext" type="text" value="">
 			         		</div>
 			       		</div>
 						<p style="font-size: 19px;">Wasting time by filling in countless similar forms on multiple sites?</p>
@@ -82,8 +82,7 @@
 							<label for="cb4"><img src="graphics/rijksmuseum.png" /></label>
 							</li>
 						</ul>
-						<a href="#firstPage/welcome"><button class="red"><span class="glyphicon glyphicon-chevron-left"></span> Previous step</button></a>
-						<a href="#firstPage/name"><button>Next step <span class="glyphicon glyphicon-chevron-right"></span></button></a>
+						<a href="#firstPage/name"><button>Continue <span class="glyphicon glyphicon-chevron-right"></span></button></a>
 					</div>
 				</div>
 			</div>
@@ -99,7 +98,7 @@
 			         		</div>
 			       		</div>
 						<a href="#firstPage/databases"><button class="red"><span class="glyphicon glyphicon-chevron-left"></span> Previous step</button></a>
-						<a href="#firstPage/nameresult" class="active"><button onclick="searchNicknames(document.getElementById('searchartist').value);">Next step <span class="glyphicon glyphicon-chevron-right"></span></button></a>
+						<a href="#firstPage/nameresult" class="active"><button onclick="searchNicknames(document.getElementById('searchartist').value);">Continue <span class="glyphicon glyphicon-chevron-right"></span></button></a>
 					</div>
 				</div>
 			</div>
@@ -109,9 +108,24 @@
 	  			<div class="row">
 					<div class="intro">
 						<div id="result">
-							<h2 style="display: inline-block;">Please finish step 1 <div class="tooltip"><span style="font-size: 16px; vertical-align: top;" class="glyphicon glyphicon-info-sign"><span class="tooltiptext">Hello, here is the info about this question.</span></span></div></h2><br>
-							<a href="#firstPage/name"><button class="red"><span class="glyphicon glyphicon-chevron-left"></span> Go to step 1</button></a>
+							<h2 style="display: inline-block;">So no artist is known.. No problem!</h2><br>
+							<a href="#firstPage/databases"><button class="red"><span class="glyphicon glyphicon-chevron-left"></span> Previous step</button></a>
+							<a href="#firstPage/nationality"><button>Continue <span class="glyphicon glyphicon-chevron-right"></span></button></a>
 						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="slide" id="visualize" data-anchor="visualize">
+			<div class="container">
+	  			<div class="row">
+					<div class="intro">
+						<h2>Do you want to see what search queries we will execute based on what you searched for?</h2>
+						<div id="buttons">
+							<a href="#firstPage/nationality"><button class="red">No</button></a>
+							<a onclick="visualizeFuzzy()"><button>Yes</button></a>	
+						</div>
+						<div id="mynetwork"></div>
 					</div>
 				</div>
 			</div>
@@ -120,17 +134,15 @@
 			<div class="container">
 	  			<div class="row">
 					<div class="intro">
-						<p style="font-size: 19px; font-weight: 200" id="nationality">test</p>
+						<p style="font-size: 19px; font-weight: 200" id="nationality"></p>
 						<h2 style="display: inline-block;">Next up, where is the artwork from? <div class="tooltip"><span style="font-size: 16px; vertical-align: top;" class="glyphicon glyphicon-info-sign"><span class="tooltiptext">Hello, here is the info about this question.</span></span></div></h2>
 						<div>
 							<p style="display: inline-block;">Based on your slection, we think the artwork is from Holland. <div class="tooltip"><span style="font-size: 11px; vertical-align: top;" class="glyphicon glyphicon-info-sign"><span class="tooltiptext">Hello, here is the info about this question.</span></span></div></p>
 							<div class="niceCountryInputSelector" data-selectedcountry="NL" data-showspecial="false" data-showflags="true" data-i18nall="All selected" data-i18nnofilter="No selection" data-i18nfilter="Filter" data-onchangecallback="onChangeCallback" />
 							</div>
 						</div>
-						<a href="#firstPage/nameresult"><button class="red"><span class="glyphicon glyphicon-chevron-left"></span> Previous step</button></a>
-						<a href="#firstPage/search" class="active"><button>Next step <span class="glyphicon glyphicon-chevron-right"></span></button></a>
-						<p style="text-decoration: underline; cursor: pointer;" onclick="visualizeFuzzy()">Click here to see all the search queries</p>
-						<div id="mynetwork"></div>
+						<a href="#firstPage/visualize"><button class="red"><span class="glyphicon glyphicon-chevron-left"></span> Previous step</button></a>
+						<a href="#firstPage/search" class="active"><button>Continue <span class="glyphicon glyphicon-chevron-right"></span></button></a>
 					</div>
 				</div>
 			</div>
@@ -152,27 +164,19 @@
 			</div>
 		</div>		
 		<div class="slide" id="search" data-anchor="results">
-			<div class="container">
+			<div class="container" id="searchresults">
 				<div class="row">
-				    <div id="searchresults">
+				    <div class="intro">
 				    	No results found
-				    </div>
-				    <div style="text-align: center;">
-						<a href="#firstPage/search"><button class="red"><span class="glyphicon glyphicon-chevron-left"></span> Previous page</button></a>
-						<a href="#firstPage/results2" class="active"><button>Next page <span class="glyphicon glyphicon-chevron-right"></span></span></button></a>  
 				    </div>
 				</div>
 			</div>
 		</div>
 		<div class="slide" id="search" data-anchor="results2">
-			<div class="container">
+			<div class="container" id="searchresults2">
 				<div class="row">
-				    <div id="searchresults2">
+				    <div class="intro">
 				    	No results found
-				    </div>
-				    <div style="text-align: center;">
-						<a href="#firstPage/results"><button class="red"><span class="glyphicon glyphicon-chevron-left"></span> Previous page</button></a>
-						<a href="#firstPage/results2" class="active"><button>Next page <span class="glyphicon glyphicon-chevron-right"></span></span></button></a>  
 				    </div>
 				</div>
 			</div>
@@ -234,16 +238,6 @@ setTimeout(function () {
   clearInterval(interval);
   $('.clock').html(rMin.slice(-2) + ':00');
 }, 5000000);
-</script>
-<script type="text/javascript">
-	setInterval(function(){document.getElementById("cb5").checked = true},1000);
-	setInterval(function(){document.getElementById("cb6").checked = true},1500);
-	setInterval(function(){document.getElementById("cb7").checked = true},2000);
-	setInterval(function(){document.getElementById("cb8").checked = true},2400);
-	setInterval(function(){document.getElementById("cb5").checked = false},3200);
-	setInterval(function(){document.getElementById("cb6").checked = false},3000);
-	setInterval(function(){document.getElementById("cb7").checked = false},3700);
-	setInterval(function(){document.getElementById("cb8").checked = false},3400);
 </script>
 <script>
 function onChangeCallback(ctr){

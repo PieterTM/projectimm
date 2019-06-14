@@ -178,7 +178,7 @@ function createResult(){
 	    });
 	});
 	console.log(fuzzyNamez);
-	result.innerHTML = '<div><img src="' + resultArtist['image'] + '" height="200px"></div><h2>So with \''+ searchBar + '\' you mean: ' + resultArtist['artist'] + '?</h2><a class="active"><button class="red">No</button></a><a class="active" onclick="addToDatabase()" href="#firstPage/nationality"><button>Yes</button></a>'
+	result.innerHTML = '<div><img src="' + resultArtist['image'] + '" height="200px"></div><h2>So with \''+ searchBar + '\' you mean: ' + resultArtist['artist'] + '?</h2><a class="active"><button class="red">No</button></a><a class="active" onclick="addToDatabase()" href="#firstPage/visualize"><button>Yes</button></a>'
 }
 function noResult(){
 	result.innerHTML = '<div><h2>No result found</h2></div>'
@@ -194,7 +194,7 @@ function visualizeFuzzy(){
 	}
 
 	var container = document.getElementById('mynetwork');
-	container.style.height = "23vw";
+	container.style.height = "40vw";
 	var data = {
 	nodes: window.fuzzyNamez,
 	edges: edges
@@ -212,6 +212,9 @@ function visualizeFuzzy(){
 	};
 	network = new vis.Network(container, data, options);
 
+	buttons = document.getElementById('buttons');
+	buttons.innerHTML = '<a href="#firstPage/nameresult"><button class="red"><span class="glyphicon glyphicon-chevron-left"></span> Previous step</button></a>\
+						<a href="#firstPage/nationality"><button>Continue <span class="glyphicon glyphicon-chevron-right"></span></button></a>'
 }
 
 function generateResults(){
@@ -260,7 +263,8 @@ function displayResults(result){
 	catch{
 		var image4 = './graphics/noimage.jpg';
 	}
-	searchresults.innerHTML = '<div class="col-md-3">\
+	searchresults.innerHTML = '<div class="row">\
+	<div class="col-md-3">\
 									<div class="intro">\
 										<svg class="card-img-top" width="100%" height="150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect>\
      <image xlink:href="'+ image1 +'" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">' + result.artObjects[0].title + '</text></svg>\
@@ -299,7 +303,13 @@ function displayResults(result){
 								        	<a href="'+result.artObjects[3].links.web+'"><button class="goto">Go to...</button></a>\
 								        </div>\
 									</div>\
-								</div>'
+								</div>\
+							</div>\
+				    <div style="text-align: center;">\
+						<a href="#firstPage/search"><button class="red"><span class="glyphicon glyphicon-chevron-left"></span> Previous page</button></a>\
+						<a href="#firstPage/results2" class="active"><button>Next page <span class="glyphicon glyphicon-chevron-right"></span></span></button></a><br>  \
+				    	<a href="#firstPage/databases"><small style="color: white;">Search again</small></a>\
+				    </div>'
 	var searchresults2 = document.getElementById('searchresults2');
 	try {
 		var image5 = result.artObjects[0].webImage.url;
@@ -325,7 +335,8 @@ function displayResults(result){
 	catch{
 		var image8 = './graphics/noimage.jpg';
 	}
-	searchresults2.innerHTML = '<div class="col-md-3">\
+	searchresults2.innerHTML = '<div class="row">\
+								<div class="col-md-3">\
 									<div class="intro">\
 										<svg class="card-img-top" width="100%" height="150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect>\
      <image xlink:href="'+ image5 +'" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">' + result.artObjects[4].title + '</text></svg>\
@@ -364,5 +375,11 @@ function displayResults(result){
 								        	<a href="'+result.artObjects[7].links.web+'"><button class="goto">Go to...</button></a>\
 								        </div>\
 									</div>\
-								</div>'
+								</div>\
+							</div>\
+				    <div style="text-align: center;">\
+						<a href="#firstPage/results"><button class="red"><span class="glyphicon glyphicon-chevron-left"></span> Previous page</button></a>\
+						<a href="#firstPage/results2" class="active"><button>Next page <span class="glyphicon glyphicon-chevron-right"></span></span></button></a><br>  \
+				    	<a href="#firstPage/databases"><small style="color: white;">Search again</small></a>\
+				    </div>'
 }
