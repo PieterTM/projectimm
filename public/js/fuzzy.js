@@ -229,7 +229,7 @@ function generateResults(){
 	  	}
 	  };
 
-	  xmlhttp.open("GET","https://www.rijksmuseum.nl/api/en/collection?q="+searchBar+"&v=&s=&ii=0&p=1&key=ZyRhwo3Z&format=json",true);
+	  xmlhttp.open("GET","https://www.rijksmuseum.nl/api/nl/collection?q="+resultArtist['artist']+"&v=list&s=relevance&ii=0&p=1&key=ZyRhwo3Z&format=json",true);
 	  xmlhttp.send();
 	}
 
@@ -262,8 +262,8 @@ function displayResults(result){
 	}
 	searchresults.innerHTML = '<div class="col-md-3">\
 									<div class="intro">\
-										<svg class="card-img-top" width="100%" height="150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><filter id="svgFilter" width="100%" height="100%" x="-0%" y="-0%">\
-      <fegaussianblur id="svgGaussBlur" in="SourceGraphic" stdDeviation="2"></fegaussianblur><feComponentTransfer><feFuncA type="discrete" tableValues="1 1"/></feComponentTransfer></filter><image filter="url(#svgFilter)" xlink:href="'+ image1 +'" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">' + result.artObjects[0].title + '</text></svg>\
+										<svg class="card-img-top" width="100%" height="150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect>\
+     <image xlink:href="'+ image1 +'" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">' + result.artObjects[0].title + '</text></svg>\
 										<div class="card">\
 								        	<p class="card-text">' + result.artObjects[0].longTitle + '</p>\
 								        	<a href="'+result.artObjects[0].links.web+'"><button class="goto">Go to...</button></a>\
@@ -272,8 +272,8 @@ function displayResults(result){
 								</div>\
 								<div class="col-md-3">\
 									<div class="intro">\
-										<svg class="card-img-top" width="100%" height="150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><filter id="svgFilter" width="100%" height="100%" x="-0%" y="-0%">\
-      <fegaussianblur id="svgGaussBlur" in="SourceGraphic" stdDeviation="2"></fegaussianblur><feComponentTransfer><feFuncA type="discrete" tableValues="1 1"/></feComponentTransfer></filter><image filter="url(#svgFilter)" xlink:href="'+ image2 +'" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">' + result.artObjects[1].title + '</text></svg>\
+										<svg class="card-img-top" width="100%" height="150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect>\
+      <image xlink:href="'+ image2 +'" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">' + result.artObjects[1].title + '</text></svg>\
 										<div class="card">\
 								        	<p class="card-text">' + result.artObjects[1].longTitle + '</p>\
 								        	<a href="'+result.artObjects[1].links.web+'"><button class="goto">Go to...</button></a>\
@@ -282,8 +282,8 @@ function displayResults(result){
 								</div>\
 								<div class="col-md-3">\
 									<div class="intro">\
-										<svg class="card-img-top" width="100%" height="150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><filter id="svgFilter" width="100%" height="100%" x="-0%" y="-0%">\
-      <fegaussianblur id="svgGaussBlur" in="SourceGraphic" stdDeviation="2"></fegaussianblur><feComponentTransfer><feFuncA type="discrete" tableValues="1 1"/></feComponentTransfer></filter><image filter="url(#svgFilter)" xlink:href="'+ image3 +'" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">' + result.artObjects[2].title + '</text></svg>\
+										<svg class="card-img-top" width="100%" height="150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect>\
+      <image xlink:href="'+ image3 +'" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">' + result.artObjects[2].title + '</text></svg>\
 										<div class="card">\
 								        	<p class="card-text">' + result.artObjects[2].longTitle + '</p>\
 								        	<a href="'+result.artObjects[2].links.web+'"><button class="goto">Go to...</button></a>\
@@ -292,13 +292,77 @@ function displayResults(result){
 								</div>\
 								<div class="col-md-3">\
 									<div class="intro">\
-										<svg class="card-img-top" width="100%" height="150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><filter id="svgFilter" width="100%" height="100%" x="-0%" y="-0%">\
-      <fegaussianblur id="svgGaussBlur" in="SourceGraphic" stdDeviation="2"></fegaussianblur><feComponentTransfer><feFuncA type="discrete" tableValues="1 1"/></feComponentTransfer></filter><image filter="url(#svgFilter)" xlink:href="'+ image4 +'" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">' + result.artObjects[3].title + '</text></svg>\
+										<svg class="card-img-top" width="100%" height="150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect>\
+      <image xlink:href="'+ image4 +'" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">' + result.artObjects[3].title + '</text></svg>\
 										<div class="card">\
 								        	<p class="card-text">' + result.artObjects[3].longTitle + '</p>\
 								        	<a href="'+result.artObjects[3].links.web+'"><button class="goto">Go to...</button></a>\
 								        </div>\
 									</div>\
 								</div>'
-
+	var searchresults2 = document.getElementById('searchresults2');
+	try {
+		var image5 = result.artObjects[0].webImage.url;
+	}
+	catch{
+		var image5 = './graphics/noimage.jpg';
+	}
+	try {
+		var image6 = result.artObjects[1].webImage.url;
+	}
+	catch{
+		var image6 = './graphics/noimage.jpg';
+	}
+	try {
+		var image7 = result.artObjects[2].webImage.url;
+	}
+	catch{
+		var image7 = './graphics/noimage.jpg';
+	}
+	try {
+		var image8 = result.artObjects[3].webImage.url;
+	}
+	catch{
+		var image8 = './graphics/noimage.jpg';
+	}
+	searchresults2.innerHTML = '<div class="col-md-3">\
+									<div class="intro">\
+										<svg class="card-img-top" width="100%" height="150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect>\
+     <image xlink:href="'+ image5 +'" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">' + result.artObjects[4].title + '</text></svg>\
+										<div class="card">\
+								        	<p class="card-text">' + result.artObjects[4].longTitle + '</p>\
+								        	<a href="'+result.artObjects[4].links.web+'"><button class="goto">Go to...</button></a>\
+								        </div>\
+									</div>\
+								</div>\
+								<div class="col-md-3">\
+									<div class="intro">\
+										<svg class="card-img-top" width="100%" height="150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect>\
+      <image xlink:href="'+ image6 +'" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">' + result.artObjects[5].title + '</text></svg>\
+										<div class="card">\
+								        	<p class="card-text">' + result.artObjects[5].longTitle + '</p>\
+								        	<a href="'+result.artObjects[5].links.web+'"><button class="goto">Go to...</button></a>\
+								        </div>\
+									</div>\
+								</div>\
+								<div class="col-md-3">\
+									<div class="intro">\
+										<svg class="card-img-top" width="100%" height="150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect>\
+      <image xlink:href="'+ image7 +'" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">' + result.artObjects[6].title + '</text></svg>\
+										<div class="card">\
+								        	<p class="card-text">' + result.artObjects[6].longTitle + '</p>\
+								        	<a href="'+result.artObjects[6].links.web+'"><button class="goto">Go to...</button></a>\
+								        </div>\
+									</div>\
+								</div>\
+								<div class="col-md-3">\
+									<div class="intro">\
+										<svg class="card-img-top" width="100%" height="150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect>\
+      <image xlink:href="'+ image8 +'" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">' + result.artObjects[7].title + '</text></svg>\
+										<div class="card">\
+								        	<p class="card-text">' + result.artObjects[7].longTitle + '</p>\
+								        	<a href="'+result.artObjects[7].links.web+'"><button class="goto">Go to...</button></a>\
+								        </div>\
+									</div>\
+								</div>'
 }
