@@ -123,17 +123,6 @@
 							<p style="display: inline-block;">Based on your slection, we think the artwork is from Holland. <div class="tooltip"><span style="font-size: 11px; vertical-align: top;" class="glyphicon glyphicon-info-sign"><span class="tooltiptext">Hello, here is the info about this question.</span></span></div></p>
 							<div class="niceCountryInputSelector" data-selectedcountry="NL" data-showspecial="false" data-showflags="true" data-i18nall="All selected" data-i18nnofilter="No selection" data-i18nfilter="Filter" data-onchangecallback="onChangeCallback" />
 							</div>
-							<script>
-								function onChangeCallback(ctr){
-									console.log("The country was changed: " + ctr);
-									//$("#selectionSpan").text(ctr);
-								}
-								$(document).ready(function () {
-									$(".niceCountryInputSelector").each(function(i,e){
-										new NiceCountryInput(e).init();
-									});
-								});
-							</script>
 						</div>
 						<a href="#firstPage/nameresult"><button class="red"><span class="glyphicon glyphicon-chevron-left"></span> Previous step</button></a>
 						<a href="#firstPage/search" class="active"><button>Next step <span class="glyphicon glyphicon-chevron-right"></span></button></a>
@@ -285,6 +274,17 @@ setTimeout(function () {
 	setInterval(function(){document.getElementById("cb6").checked = false},3000);
 	setInterval(function(){document.getElementById("cb7").checked = false},3700);
 	setInterval(function(){document.getElementById("cb8").checked = false},3400);
+</script>
+<script>
+function onChangeCallback(ctr){
+	console.log("The country was changed: " + ctr);
+	//$("#selectionSpan").text(ctr);
+}
+$(document).ready(function () {
+	$(".niceCountryInputSelector").each(function(i,e){
+		new NiceCountryInput(e).init();
+	});
+});
 </script>
 </body>
 

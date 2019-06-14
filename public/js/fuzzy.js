@@ -215,26 +215,23 @@ function visualizeFuzzy(){
 }
 
 function generateResults(){
-$.get("/js/test.php?searchBar="+searchBar);
-    return false;
-}
-	// if (window.XMLHttpRequest) {
-	//       // code for IE7+, Firefox, Chrome, Opera, Safari
-	//       xmlhttp = new XMLHttpRequest();
-	//   } else {
-	//       // code for IE6, IE5
-	//       xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-	//   }
-	//   xmlhttp.onreadystatechange = function() {
-	//   	if (this.readyState == 4 && this.status == 200) {
-	//   		var result = JSON.parse(this.responseText);
-	// 	  	displayResults(result);
-	//   	}
-	//   };
+	if (window.XMLHttpRequest) {
+	      // code for IE7+, Firefox, Chrome, Opera, Safari
+	      xmlhttp = new XMLHttpRequest();
+	  } else {
+	      // code for IE6, IE5
+	      xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+	  }
+	  xmlhttp.onreadystatechange = function() {
+	  	if (this.readyState == 4 && this.status == 200) {
+	  		var result = JSON.parse(this.responseText);
+		  	displayResults(result);
+	  	}
+	  };
 
-	//   xmlhttp.open("GET","https://api.rkd.nl/api/instant/images?query=" + searchBar + "&format=json",true);
-	//   xmlhttp.send();
-	// }
+	  xmlhttp.open("GET","https://api.rkd.nl/api/instant/images?query=" + searchBar + "&format=json",true);
+	  xmlhttp.send();
+	}
 
 function displayResults(result){
 	result = JSON.parse(result);

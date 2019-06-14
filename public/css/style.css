@@ -380,10 +380,13 @@ article:hover a {
 .niceCountryInputMenuDefaultText {
     width: auto;
     display: inline;
-    vertical-align: middle;
+    vertical-align: top;
 }
 .niceCountryInputMenuDropdown span {
   vertical-align: middle;
+}
+.niceCountryInputMenuDropdown{
+  top: 10px;
 }
 .niceCountryInputMenuCountryFlag {
     border: 1px solid rgba(255,255,255,0.1);
@@ -391,6 +394,12 @@ article:hover a {
 .niceCountryInputMenuFilter input {
   padding: inherit;
   margin-bottom: 0;
+}
+.niceCountryInputMenuDropdownContent{
+  background-color: white;
+}
+.niceCountryInputMenuFilter{
+  background-color: white;
 }
 .niceCountryInputMenuDropdownContent a {
   color: rgb(255,255,255) !important;
