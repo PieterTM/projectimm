@@ -229,47 +229,74 @@ function generateResults(){
 	  	}
 	  };
 
-	  xmlhttp.open("GET","https://api.rkd.nl/api/instant/images?query=" + searchBar + "&format=json",true);
+	  xmlhttp.open("GET","https://www.rijksmuseum.nl/api/en/collection?q="+searchBar+"&v=&s=&ii=0&p=1&key=ZyRhwo3Z&format=json",true);
 	  xmlhttp.send();
 	}
 
 function displayResults(result){
-	result = JSON.parse(result);
 	console.log(result);
 	var searchresults = document.getElementById('searchresults');
+	try {
+		var image1 = result.artObjects[0].webImage.url;
+	}
+	catch{
+		var image1 = './graphics/noimage.jpg';
+	}
+	try {
+		var image2 = result.artObjects[1].webImage.url;
+	}
+	catch{
+		var image2 = './graphics/noimage.jpg';
+	}
+	try {
+		var image3 = result.artObjects[2].webImage.url;
+	}
+	catch{
+		var image3 = './graphics/noimage.jpg';
+	}
+	try {
+		var image4 = result.artObjects[3].webImage.url;
+	}
+	catch{
+		var image4 = './graphics/noimage.jpg';
+	}
 	searchresults.innerHTML = '<div class="col-md-3">\
 									<div class="intro">\
-										<svg class="card-img-top" width="100%" height="150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><image xlink:href="graphics/rembrandt.jpg" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">De nachtwacht</text></svg>\
+										<svg class="card-img-top" width="100%" height="150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><filter id="svgFilter" width="100%" height="100%" x="-0%" y="-0%">\
+      <fegaussianblur id="svgGaussBlur" in="SourceGraphic" stdDeviation="2"></fegaussianblur><feComponentTransfer><feFuncA type="discrete" tableValues="1 1"/></feComponentTransfer></filter><image filter="url(#svgFilter)" xlink:href="'+ image1 +'" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">' + result.artObjects[0].title + '</text></svg>\
 										<div class="card">\
-								        	<p class="card-text">' + result.response.docs[0].benaming_kunstwerk[0] + '</p>\
-								        	<button class="goto">Go to...</button>\
+								        	<p class="card-text">' + result.artObjects[0].longTitle + '</p>\
+								        	<a href="'+result.artObjects[0].links.web+'"><button class="goto">Go to...</button></a>\
 								        </div>\
 									</div>\
 								</div>\
 								<div class="col-md-3">\
 									<div class="intro">\
-										<svg class="card-img-top" width="100%" height="150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><image xlink:href="graphics/rembrandt.jpg" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">De nachtwacht</text></svg>\
+										<svg class="card-img-top" width="100%" height="150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><filter id="svgFilter" width="100%" height="100%" x="-0%" y="-0%">\
+      <fegaussianblur id="svgGaussBlur" in="SourceGraphic" stdDeviation="2"></fegaussianblur><feComponentTransfer><feFuncA type="discrete" tableValues="1 1"/></feComponentTransfer></filter><image filter="url(#svgFilter)" xlink:href="'+ image2 +'" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">' + result.artObjects[1].title + '</text></svg>\
 										<div class="card">\
-								        	<p class="card-text">' + result.response.docs[1].benaming_kunstwerk[0] + '</p>\
-								        	<button class="goto">Go to...</button>\
+								        	<p class="card-text">' + result.artObjects[1].longTitle + '</p>\
+								        	<a href="'+result.artObjects[1].links.web+'"><button class="goto">Go to...</button></a>\
 								        </div>\
 									</div>\
 								</div>\
 								<div class="col-md-3">\
 									<div class="intro">\
-										<svg class="card-img-top" width="100%" height="150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><image xlink:href="graphics/rembrandt.jpg" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">De nachtwacht</text></svg>\
+										<svg class="card-img-top" width="100%" height="150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><filter id="svgFilter" width="100%" height="100%" x="-0%" y="-0%">\
+      <fegaussianblur id="svgGaussBlur" in="SourceGraphic" stdDeviation="2"></fegaussianblur><feComponentTransfer><feFuncA type="discrete" tableValues="1 1"/></feComponentTransfer></filter><image filter="url(#svgFilter)" xlink:href="'+ image3 +'" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">' + result.artObjects[2].title + '</text></svg>\
 										<div class="card">\
-								        	<p class="card-text">' + result.response.docs[2].benaming_kunstwerk[0] + '</p>\
-								        	<button class="goto">Go to...</button>\
+								        	<p class="card-text">' + result.artObjects[2].longTitle + '</p>\
+								        	<a href="'+result.artObjects[2].links.web+'"><button class="goto">Go to...</button></a>\
 								        </div>\
 									</div>\
 								</div>\
 								<div class="col-md-3">\
 									<div class="intro">\
-										<svg class="card-img-top" width="100%" height="150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><image xlink:href="graphics/rembrandt.jpg" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">De nachtwacht</text></svg>\
+										<svg class="card-img-top" width="100%" height="150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><filter id="svgFilter" width="100%" height="100%" x="-0%" y="-0%">\
+      <fegaussianblur id="svgGaussBlur" in="SourceGraphic" stdDeviation="2"></fegaussianblur><feComponentTransfer><feFuncA type="discrete" tableValues="1 1"/></feComponentTransfer></filter><image filter="url(#svgFilter)" xlink:href="'+ image4 +'" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">' + result.artObjects[3].title + '</text></svg>\
 										<div class="card">\
-								        	<p class="card-text">' + result.response.docs[3].benaming_kunstwerk[0] + '</p>\
-								        	<button class="goto">Go to...</button>\
+								        	<p class="card-text">' + result.artObjects[3].longTitle + '</p>\
+								        	<a href="'+result.artObjects[3].links.web+'"><button class="goto">Go to...</button></a>\
 								        </div>\
 									</div>\
 								</div>'

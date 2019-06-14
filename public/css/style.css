@@ -21,6 +21,9 @@ button {
   margin: 10px;
   vertical-align: top;
 }
+button:hover{
+  background-color: #54991e;
+}
 ul {
   list-style-type: none;
   padding: 0;
@@ -202,6 +205,9 @@ svg {
 }
 .red {
   background-color: #c64c45;
+}
+.red:hover {
+  background-color: #d85149;
 }
 .intro {
   width: 100%;
@@ -420,5 +426,8 @@ article:hover a {
   }
   .fp-controlArrow {
     visibility: hidden;
+  }
+  .card-img-top {
+    height: 20px;
   }
 }
