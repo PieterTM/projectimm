@@ -194,7 +194,7 @@ function visualizeFuzzy(){
 	}
 
 	var container = document.getElementById('mynetwork');
-	container.style.height = "40vw";
+	container.style.height = "60vh";
 	var data = {
 	nodes: window.fuzzyNamez,
 	edges: edges
