@@ -1,30 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Reasyrch - PIM</title>
-	<link rel="shortcut icon" type="image/x-icon" href="graphics/favicon.png">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8">
-	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="css/fullpage.css" />
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.4.5/fuse.min.js"></script>
-	<script src="js/fuzzy.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-firestore.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.js"></script>
-  	<link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis-network.min.css">
+
+	<title>Reasyrch - PIM</title>
+
+	<link rel="shortcut icon" type="image/x-icon" href="graphics/favicon.png">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis-network.min.css">
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="https://www.jqueryscript.net/demo/Filterable-Country-Picker-niceCountryInput/niceCountryInput.css">
+	<link rel="stylesheet" href="css/fullpage.css" /> 
+
+	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.4.5/fuse.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-firestore.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.js"></script>	
 	<script src="https://www.jqueryscript.net/demo/Filterable-Country-Picker-niceCountryInput/niceCountryInput.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://www.jqueryscript.net/demo/Filterable-Country-Picker-niceCountryInput/niceCountryInput.css">
 </head>
 
 <body>
 <div id="fullpage">
 <!-- <nav class="navbar navbar-default navbar-fixed-top">
   <div class="intro">
-	<img src="graphics/logo.png" height="100px">
+	<img src="graphics/logo.png" height="50px">
   </div>
 </nav> -->
 	<div class="section">
@@ -154,7 +156,7 @@
 						<h2 style="display: inline-block;">Finally, who was the previous owner? <div class="tooltip"><span style="font-size: 16px; vertical-align: top;" class="glyphicon glyphicon-info-sign"><span class="tooltiptext">If you know who the previous owner of this artwork was, please tell us. If you don't know you can skip this question.</span></span></div></span></h2>
 						<div class="inner-form">
 			         		<div class="input-field second-wrap">
-			           			<input type="text" placeholder="e.g. Jantje">
+			           			<input type="text" placeholder="e.g. Jantje" id="previousowner">
 			         		</div>
 			       		</div>
 						<a href="#firstPage/nationality"><button class="red"><span class="glyphicon glyphicon-chevron-left"></span> Previous step</button></a>
@@ -188,10 +190,7 @@
 		</div>
 	</div> -->
 </div>
-<!-- scripts -->
-<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
 <script>
-// TODO: Replace the following with your app's Firebase project configuration
 const firebaseConfig = {
   apiKey: "AIzaSyDAz3I1G3SZrNTPSilVJ0wBujkAB_YoOg0",
   authDomain: "ropishoppa.firebaseapp.com",
@@ -206,7 +205,7 @@ firebase.initializeApp(firebaseConfig);
 </script>
 <script type="text/javascript" src="./js/fullpage.js"></script>
 <script src="js/type.js"></script>
-<script type="text/javascript">
+<script type="text/javascript"> // fullpage settings
     var myFullpage = new fullpage('#fullpage', {
         anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage'],
         slidesNavigation: true,
@@ -215,7 +214,7 @@ firebase.initializeApp(firebaseConfig);
         
     });
 </script>
-<script type="text/javascript">
+<script type="text/javascript"> // Clock timer
 	var sec = 0,
     min = 0,
     rSec = 0,
@@ -239,7 +238,7 @@ setTimeout(function () {
   $('.clock').html(rMin.slice(-2) + ':00');
 }, 5000000);
 </script>
-<script>
+<script> // country picker
 function onChangeCallback(ctr){
 	console.log("The country was changed: " + ctr);
 	//$("#selectionSpan").text(ctr);
@@ -250,6 +249,7 @@ $(document).ready(function () {
 	});
 });
 </script>
+<script src="js/main.js"></script>
 </body>
 
 </html>

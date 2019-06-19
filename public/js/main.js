@@ -49,10 +49,23 @@ var options = {
 	keys: ['artist', 'nicknames']
 };
 
+window.searchBar = '';
 var fuse = new Fuse(artists, options);
 var nodes = null;
 var edges = null;
 var network = null;
+
+$("#searchartist").on('keyup', function (e) {
+    if (e.keyCode == 13) {
+        window.location = '#firstPage/nameresult';
+    }
+});
+$("#previousowner").on('keyup', function (e) {
+    if (e.keyCode == 13) {
+    	generateResults();
+        window.location = '#firstPage/results';
+    }
+});
 
 function searchNicknames(searchBar){
 	var result = document.getElementById("result");
@@ -140,12 +153,12 @@ function searchNicknames(searchBar){
 			result.innerHTML = '<div><h2>No result found</h2></div>'
 		}
 	}
-	catch{
-		if (searchBar.length>3) {
+	catch(err){
+		if (searchBar.length>3){
 			noResult();
-		}
+		};
 	}
-}
+};
 
 function addToDatabase(){
 	var db = firebase.firestore()
@@ -231,10 +244,13 @@ function generateResults(){
 		  	displayResults(result);
 	  	}
 	  };
-
-	  xmlhttp.open("GET","https://www.rijksmuseum.nl/api/nl/collection?q="+resultArtist['artist']+"&v=list&s=relevance&ii=0&p=1&key=ZyRhwo3Z&format=json",true);
+	  if(searchBar!=''){
+	  	xmlhttp.open("GET","https://www.rijksmuseum.nl/api/nl/collection?q="+resultArtist['artist']+"&v=list&s=relevance&ii=0&p=1&key=ZyRhwo3Z&format=json",true);
+	  }else{
+	  	xmlhttp.open("GET","https://www.rijksmuseum.nl/api/nl/collection?v=list&s=relevance&ii=0&p=1&key=ZyRhwo3Z&format=json",true);
+	  }
 	  xmlhttp.send();
-	}
+}
 
 function displayResults(result){
 	console.log(result);
@@ -242,25 +258,25 @@ function displayResults(result){
 	try {
 		var image1 = result.artObjects[0].webImage.url;
 	}
-	catch{
+	catch(e){
 		var image1 = './graphics/noimage.jpg';
 	}
 	try {
 		var image2 = result.artObjects[1].webImage.url;
 	}
-	catch{
+	catch(e){
 		var image2 = './graphics/noimage.jpg';
 	}
 	try {
 		var image3 = result.artObjects[2].webImage.url;
 	}
-	catch{
+	catch(e){
 		var image3 = './graphics/noimage.jpg';
 	}
 	try {
 		var image4 = result.artObjects[3].webImage.url;
 	}
-	catch{
+	catch(e){
 		var image4 = './graphics/noimage.jpg';
 	}
 	searchresults.innerHTML = '<div class="row">\
@@ -314,25 +330,25 @@ function displayResults(result){
 	try {
 		var image5 = result.artObjects[0].webImage.url;
 	}
-	catch{
+	catch(e){
 		var image5 = './graphics/noimage.jpg';
 	}
 	try {
 		var image6 = result.artObjects[1].webImage.url;
 	}
-	catch{
+	catch(e){
 		var image6 = './graphics/noimage.jpg';
 	}
 	try {
 		var image7 = result.artObjects[2].webImage.url;
 	}
-	catch{
+	catch(e){
 		var image7 = './graphics/noimage.jpg';
 	}
 	try {
 		var image8 = result.artObjects[3].webImage.url;
 	}
-	catch{
+	catch(e){
 		var image8 = './graphics/noimage.jpg';
 	}
 	searchresults2.innerHTML = '<div class="row">\
