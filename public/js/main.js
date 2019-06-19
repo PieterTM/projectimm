@@ -57,6 +57,7 @@ var network = null;
 
 $("#searchartist").on('keyup', function (e) {
     if (e.keyCode == 13) {
+    	searchNicknames(document.getElementById('searchartist').value);
         window.location = '#firstPage/nameresult';
     }
 });
