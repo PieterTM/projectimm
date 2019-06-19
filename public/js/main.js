@@ -162,7 +162,7 @@ function searchNicknames(searchBar){
 };
 
 function addToDatabase(){
-	var db = firebase.firestore()
+	var db = firebase.firestore();
 	db.collection("artists").doc(window.artistID).collection("fuzzynames").add({
 		fuzzy: window.searchBar
 	})
