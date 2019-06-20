@@ -250,6 +250,7 @@ function generateResults(){
 	  }else{
 	  	xmlhttp.open("GET","https://www.rijksmuseum.nl/api/nl/collection?v=list&s=relevance&ii=0&p=1&key=ZyRhwo3Z&format=json",true);
 	  }
+	  
 	  xmlhttp.send();
 }
 
