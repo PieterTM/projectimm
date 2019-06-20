@@ -191,8 +191,7 @@ function createResult(){
 	        // window.fuzzyNamez.push(doc.data().fuzzy);
 	    });
 	});
-	console.log(fuzzyNamez);
-	result.innerHTML = '<div><img src="' + resultArtist['image'] + '" height="200px"></div><h2>So with \''+ searchBar + '\' you mean: ' + resultArtist['artist'] + '?</h2><a class="active"><button class="red">No</button></a><a class="active" onclick="addToDatabase()" href="#firstPage/visualize"><button>Yes</button></a>'
+	result.innerHTML = '<div><img src="' + resultArtist['image'] + '" height="200px"></div><h2>So with \''+ searchBar + '\' you mean: ' + resultArtist['artist'] + '?</h2><a href="#firstPage/no-artist"><button class="red" onclick="noClicked()">No</button></a><a class="active" onclick="addToDatabase()" href="#firstPage/visualize"><button>Yes</button></a>'
 }
 function noResult(){
 	result.innerHTML = '<div><h2>No result found</h2></div>'
@@ -250,12 +249,11 @@ function generateResults(){
 	  }else{
 	  	xmlhttp.open("GET","https://www.rijksmuseum.nl/api/nl/collection?v=list&s=relevance&ii=0&p=1&key=ZyRhwo3Z&format=json",true);
 	  }
-	  
+
 	  xmlhttp.send();
 }
 
 function displayResults(result){
-	console.log(result);
 	var searchresults = document.getElementById('searchresults');
 	try {
 		var image1 = result.artObjects[0].webImage.url;
@@ -327,7 +325,7 @@ function displayResults(result){
 						<a href="#firstPage/search"><button class="red"><span class="glyphicon glyphicon-chevron-left"></span> Previous page</button></a>\
 						<a href="#firstPage/results2" class="active"><button>Next page <span class="glyphicon glyphicon-chevron-right"></span></span></button></a><br>  \
 				    	<a href="#firstPage/databases"><small style="color: white;">Search again</small></a>\
-				    </div>'
+				    </div>';
 	var searchresults2 = document.getElementById('searchresults2');
 	try {
 		var image5 = result.artObjects[0].webImage.url;
@@ -399,5 +397,32 @@ function displayResults(result){
 						<a href="#firstPage/results"><button class="red"><span class="glyphicon glyphicon-chevron-left"></span> Previous page</button></a>\
 						<a href="#firstPage/results2" class="active"><button>Next page <span class="glyphicon glyphicon-chevron-right"></span></span></button></a><br>  \
 				    	<a href="#firstPage/databases"><small style="color: white;">Search again</small></a>\
-				    </div>'
+				    </div>';
+};
+
+function noClicked(){
+	noClickedId = document.getElementById('noClicked');
+	noClickedId.innerHTML = '<h2>Reasyrch is eager to learn from you!</h2>\
+				<p>Can you provide Reasyrch with the full name of ' + searchBar +'?</p>\
+				<div class="inner-form">\
+	         		<div class="input-field second-wrap">\
+	           			<input type="text" placeholder="Full name of '+searchBar+'" id="searchartist">\
+	         		</div>\
+	       		</div>\
+				<div>\
+					<strong>Please drag and drop an image of '+searchBar+' below</strong>\
+				</div>\
+	       		<div>\
+	       			<a href="#firstPage/name"><button class="red"><span class="glyphicon glyphicon-chevron-left"></span> Previous step</button></a>\
+	       			<button onclick="newProfile()">Continue <span class="glyphicon glyphicon-chevron-right"></span> </button>\
+	       		</div>';
+}
+
+function newProfile(){
+	noClickedId = document.getElementById('noClicked');
+	noClickedId.innerHTML = '<h2>Thankyou very much!</h2><p>You will be redirected</p>';
+	var delayInMilliseconds = 1300; //1 second
+	setTimeout(function() {
+	  window.location = '#firstPage/nationality'
+	}, delayInMilliseconds);
 }
