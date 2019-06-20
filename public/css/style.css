@@ -466,4 +466,7 @@ article:hover a {
   .intro{
     margin-bottom: 20px;
   }
+  .searchTitle{
+    display: none;
+  }
 }

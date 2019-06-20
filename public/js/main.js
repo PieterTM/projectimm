@@ -280,7 +280,8 @@ function displayResults(result){
 		var image4 = './graphics/noimage.jpg';
 	}
 	searchresults.innerHTML = '<div class="row">\
-	<div class="col-md-3">\
+							<div id="searchTitle" class="intro" style="margin-bottom: 20px;"><h2>Your search results</h2></div>\
+								<div class="col-md-3">\
 									<div class="intro">\
 										<svg class="card-img-top" width="100%" height="150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect>\
      <image xlink:href="'+ image1 +'" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">' + result.artObjects[0].title.substring(0,20) + '...</text></svg>\
@@ -352,6 +353,7 @@ function displayResults(result){
 		var image8 = './graphics/noimage.jpg';
 	}
 	searchresults2.innerHTML = '<div class="row">\
+								<div id="searchTitle" class="intro" style="margin-bottom: 20px;"><h2>Your search results</h2></div>\
 								<div class="col-md-3">\
 									<div class="intro">\
 										<svg class="card-img-top" width="100%" height="150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect>\
