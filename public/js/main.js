@@ -191,7 +191,7 @@ function createResult(){
 	        // window.fuzzyNamez.push(doc.data().fuzzy);
 	    });
 	});
-	result.innerHTML = '<div><img src="' + resultArtist['image'] + '" height="200px"></div><h2>So with \''+ searchBar + '\' you mean: ' + resultArtist['artist'] + '?</h2><a href="#firstPage/no-artist"><button class="red" onclick="noClicked()">No</button></a><a class="active" onclick="addToDatabase()" href="#firstPage/visualize"><button>Yes</button></a>'
+	result.innerHTML = '<div><img src="' + resultArtist['image'] + '" height="200px"></div><h2>So with \''+ searchBar + '\' you mean: ' + resultArtist['artist'] + '?</h2><a href="#firstPage/no-artist"><button class="red" onclick="noClicked()">No <span class="glyphicon glyphicon-remove"></span></button></a><a class="active" onclick="addToDatabase()" href="#firstPage/visualize"><button>Yes <span class="glyphicon glyphicon-ok"></span></button></a>'
 }
 function noResult(){
 	result.innerHTML = '<div><h2>No result found</h2></div>'
@@ -283,7 +283,7 @@ function displayResults(result){
 	<div class="col-md-3">\
 									<div class="intro">\
 										<svg class="card-img-top" width="100%" height="150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect>\
-     <image xlink:href="'+ image1 +'" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">' + result.artObjects[0].title + '</text></svg>\
+     <image xlink:href="'+ image1 +'" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">' + result.artObjects[0].title.substring(0,20) + '...</text></svg>\
 										<div class="card">\
 								        	<p class="card-text">' + result.artObjects[0].longTitle + '</p>\
 								        	<a href="'+result.artObjects[0].links.web+'"><button class="goto">Go to...</button></a>\
@@ -293,7 +293,7 @@ function displayResults(result){
 								<div class="col-md-3">\
 									<div class="intro">\
 										<svg class="card-img-top" width="100%" height="150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect>\
-      <image xlink:href="'+ image2 +'" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">' + result.artObjects[1].title + '</text></svg>\
+      <image xlink:href="'+ image2 +'" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">' + result.artObjects[1].title.substring(0,20) + '...</text></svg>\
 										<div class="card">\
 								        	<p class="card-text">' + result.artObjects[1].longTitle + '</p>\
 								        	<a href="'+result.artObjects[1].links.web+'"><button class="goto">Go to...</button></a>\
@@ -303,7 +303,7 @@ function displayResults(result){
 								<div class="col-md-3">\
 									<div class="intro">\
 										<svg class="card-img-top" width="100%" height="150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect>\
-      <image xlink:href="'+ image3 +'" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">' + result.artObjects[2].title + '</text></svg>\
+      <image xlink:href="'+ image3 +'" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">' + result.artObjects[2].title.substring(0,20) + '...</text></svg>\
 										<div class="card">\
 								        	<p class="card-text">' + result.artObjects[2].longTitle + '</p>\
 								        	<a href="'+result.artObjects[2].links.web+'"><button class="goto">Go to...</button></a>\
@@ -313,7 +313,7 @@ function displayResults(result){
 								<div class="col-md-3">\
 									<div class="intro">\
 										<svg class="card-img-top" width="100%" height="150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect>\
-      <image xlink:href="'+ image4 +'" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">' + result.artObjects[3].title + '</text></svg>\
+      <image xlink:href="'+ image4 +'" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">' + result.artObjects[3].title.substring(0,20) + '...</text></svg>\
 										<div class="card">\
 								        	<p class="card-text">' + result.artObjects[3].longTitle + '</p>\
 								        	<a href="'+result.artObjects[3].links.web+'"><button class="goto">Go to...</button></a>\
@@ -322,7 +322,7 @@ function displayResults(result){
 								</div>\
 							</div>\
 				    <div style="text-align: center;">\
-						<a href="#firstPage/search"><button class="red"><span class="glyphicon glyphicon-chevron-left"></span> Previous page</button></a>\
+						<a href="#firstPage/price"><button class="red"><span class="glyphicon glyphicon-chevron-left"></span> Previous page</button></a>\
 						<a href="#firstPage/results2" class="active"><button>Next page <span class="glyphicon glyphicon-chevron-right"></span></span></button></a><br>  \
 				    	<a href="#firstPage/databases"><small style="color: white;">Search again</small></a>\
 				    </div>';
@@ -355,7 +355,7 @@ function displayResults(result){
 								<div class="col-md-3">\
 									<div class="intro">\
 										<svg class="card-img-top" width="100%" height="150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect>\
-     <image xlink:href="'+ image5 +'" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">' + result.artObjects[4].title + '</text></svg>\
+     <image xlink:href="'+ image5 +'" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">' + result.artObjects[4].title.substring(0,20) + '...</text></svg>\
 										<div class="card">\
 								        	<p class="card-text">' + result.artObjects[4].longTitle + '</p>\
 								        	<a href="'+result.artObjects[4].links.web+'"><button class="goto">Go to...</button></a>\
@@ -365,7 +365,7 @@ function displayResults(result){
 								<div class="col-md-3">\
 									<div class="intro">\
 										<svg class="card-img-top" width="100%" height="150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect>\
-      <image xlink:href="'+ image6 +'" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">' + result.artObjects[5].title + '</text></svg>\
+      <image xlink:href="'+ image6 +'" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">' + result.artObjects[5].title.substring(0,20) + '...</text></svg>\
 										<div class="card">\
 								        	<p class="card-text">' + result.artObjects[5].longTitle + '</p>\
 								        	<a href="'+result.artObjects[5].links.web+'"><button class="goto">Go to...</button></a>\
@@ -375,7 +375,7 @@ function displayResults(result){
 								<div class="col-md-3">\
 									<div class="intro">\
 										<svg class="card-img-top" width="100%" height="150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect>\
-      <image xlink:href="'+ image7 +'" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">' + result.artObjects[6].title + '</text></svg>\
+      <image xlink:href="'+ image7 +'" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">' + result.artObjects[6].title.substring(0,20) + '...</text></svg>\
 										<div class="card">\
 								        	<p class="card-text">' + result.artObjects[6].longTitle + '</p>\
 								        	<a href="'+result.artObjects[6].links.web+'"><button class="goto">Go to...</button></a>\
@@ -385,7 +385,7 @@ function displayResults(result){
 								<div class="col-md-3">\
 									<div class="intro">\
 										<svg class="card-img-top" width="100%" height="150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect>\
-      <image xlink:href="'+ image8 +'" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">' + result.artObjects[7].title + '</text></svg>\
+      <image xlink:href="'+ image8 +'" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">' + result.artObjects[7].title.substring(0,20) + '...</text></svg>\
 										<div class="card">\
 								        	<p class="card-text">' + result.artObjects[7].longTitle + '</p>\
 								        	<a href="'+result.artObjects[7].links.web+'"><button class="goto">Go to...</button></a>\
