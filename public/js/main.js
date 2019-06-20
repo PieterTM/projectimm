@@ -63,10 +63,16 @@ $("#searchartist").on('keyup', function (e) {
 });
 $("#previousowner").on('keyup', function (e) {
     if (e.keyCode == 13) {
+        window.location = '#firstPage/price';
+    }
+});
+$("#price").on('keyup', function (e) {
+    if (e.keyCode == 13) {
     	generateResults();
         window.location = '#firstPage/results';
     }
 });
+
 
 function searchNicknames(searchBar){
 	var result = document.getElementById("result");
@@ -287,7 +293,7 @@ function displayResults(result){
      <image xlink:href="'+ image1 +'" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">' + result.artObjects[0].title.substring(0,20) + '...</text></svg>\
 										<div class="card">\
 								        	<p class="card-text">' + result.artObjects[0].longTitle + '</p>\
-								        	<a href="'+result.artObjects[0].links.web+'"><button class="goto">Go to...</button></a>\
+								        	<a href="'+result.artObjects[0].links.web+'" target="_blank"><button class="goto">Go to...</button></a>\
 								        </div>\
 									</div>\
 								</div>\
@@ -297,7 +303,7 @@ function displayResults(result){
       <image xlink:href="'+ image2 +'" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">' + result.artObjects[1].title.substring(0,20) + '...</text></svg>\
 										<div class="card">\
 								        	<p class="card-text">' + result.artObjects[1].longTitle + '</p>\
-								        	<a href="'+result.artObjects[1].links.web+'"><button class="goto">Go to...</button></a>\
+								        	<a href="'+result.artObjects[1].links.web+'" target="_blank"><button class="goto">Go to...</button></a>\
 								        </div>\
 									</div>\
 								</div>\
@@ -307,7 +313,7 @@ function displayResults(result){
       <image xlink:href="'+ image3 +'" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">' + result.artObjects[2].title.substring(0,20) + '...</text></svg>\
 										<div class="card">\
 								        	<p class="card-text">' + result.artObjects[2].longTitle + '</p>\
-								        	<a href="'+result.artObjects[2].links.web+'"><button class="goto">Go to...</button></a>\
+								        	<a href="'+result.artObjects[2].links.web+'" target="_blank"><button class="goto">Go to...</button></a>\
 								        </div>\
 									</div>\
 								</div>\
@@ -317,7 +323,7 @@ function displayResults(result){
       <image xlink:href="'+ image4 +'" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">' + result.artObjects[3].title.substring(0,20) + '...</text></svg>\
 										<div class="card">\
 								        	<p class="card-text">' + result.artObjects[3].longTitle + '</p>\
-								        	<a href="'+result.artObjects[3].links.web+'"><button class="goto">Go to...</button></a>\
+								        	<a href="'+result.artObjects[3].links.web+'" target="_blank"><button class="goto">Go to...</button></a>\
 								        </div>\
 									</div>\
 								</div>\
@@ -360,7 +366,7 @@ function displayResults(result){
      <image xlink:href="'+ image5 +'" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">' + result.artObjects[4].title.substring(0,20) + '...</text></svg>\
 										<div class="card">\
 								        	<p class="card-text">' + result.artObjects[4].longTitle + '</p>\
-								        	<a href="'+result.artObjects[4].links.web+'"><button class="goto">Go to...</button></a>\
+								        	<a href="'+result.artObjects[4].links.web+'" target="_blank"><button class="goto">Go to...</button></a>\
 								        </div>\
 									</div>\
 								</div>\
@@ -370,7 +376,7 @@ function displayResults(result){
       <image xlink:href="'+ image6 +'" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">' + result.artObjects[5].title.substring(0,20) + '...</text></svg>\
 										<div class="card">\
 								        	<p class="card-text">' + result.artObjects[5].longTitle + '</p>\
-								        	<a href="'+result.artObjects[5].links.web+'"><button class="goto">Go to...</button></a>\
+								        	<a href="'+result.artObjects[5].links.web+'" target="_blank"><button class="goto">Go to...</button></a>\
 								        </div>\
 									</div>\
 								</div>\
@@ -380,7 +386,7 @@ function displayResults(result){
       <image xlink:href="'+ image7 +'" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">' + result.artObjects[6].title.substring(0,20) + '...</text></svg>\
 										<div class="card">\
 								        	<p class="card-text">' + result.artObjects[6].longTitle + '</p>\
-								        	<a href="'+result.artObjects[6].links.web+'"><button class="goto">Go to...</button></a>\
+								        	<a href="'+result.artObjects[6].links.web+'" target="_blank"><button class="goto">Go to...</button></a>\
 								        </div>\
 									</div>\
 								</div>\
@@ -390,7 +396,7 @@ function displayResults(result){
       <image xlink:href="'+ image8 +'" width="100%"></image><text font-size="19px" x="50%" y="55%" text-anchor="middle" fill="#eceeef" dy=".3em">' + result.artObjects[7].title.substring(0,20) + '...</text></svg>\
 										<div class="card">\
 								        	<p class="card-text">' + result.artObjects[7].longTitle + '</p>\
-								        	<a href="'+result.artObjects[7].links.web+'"><button class="goto">Go to...</button></a>\
+								        	<a href="'+result.artObjects[7].links.web+'" target="_blank"><button class="goto">Go to...</button></a>\
 								        </div>\
 									</div>\
 								</div>\
@@ -408,7 +414,7 @@ function noClicked(){
 				<p>Can you provide Reasyrch with the full name of ' + searchBar +'?</p>\
 				<div class="inner-form">\
 	         		<div class="input-field second-wrap">\
-	           			<input type="text" placeholder="Full name of '+searchBar+'" id="searchartist">\
+	           			<input type="text" placeholder="Full name of '+searchBar+'" id="nameFull">\
 	         		</div>\
 	       		</div>\
 				<div>\
@@ -418,6 +424,11 @@ function noClicked(){
 	       			<a href="#firstPage/name"><button class="red"><span class="glyphicon glyphicon-chevron-left"></span> Previous step</button></a>\
 	       			<button onclick="newProfile()">Continue <span class="glyphicon glyphicon-chevron-right"></span> </button>\
 	       		</div>';
+	$("#nameFull").on('keyup', function (e) {
+    if (e.keyCode == 13) {
+    	newProfile();
+    }
+	});
 }
 
 function newProfile(){
