@@ -426,3 +426,10 @@ function newProfile(){
 	  window.location = '#firstPage/nationality'
 	}, delayInMilliseconds);
 }
+
+function selectAll(){
+	document.getElementById('cb1').checked = true;
+	document.getElementById('cb2').checked = true;
+	document.getElementById('cb3').checked = true;
+	document.getElementById('cb4').checked = true;
+}
