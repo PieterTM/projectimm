@@ -197,7 +197,7 @@ function createResult(){
 	        // window.fuzzyNamez.push(doc.data().fuzzy);
 	    });
 	});
-	result.innerHTML = '<div><img src="' + resultArtist['image'] + '" height="200px"></div><h2>So with \''+ searchBar + '\' you mean: ' + resultArtist['artist'] + '?</h2><a href="#firstPage/no-artist"><button class="red" onclick="noClicked()">No <span class="glyphicon glyphicon-remove"></span></button></a><a class="active" onclick="addToDatabase()" href="#firstPage/visualize"><button>Yes <span class="glyphicon glyphicon-ok"></span></button></a>'
+	result.innerHTML = '<div><img src="' + resultArtist['image'] + '" height="200px"></div><h2>So with \''+ searchBar + '\' you mean: ' + resultArtist['artist'] + '?</h2><a href="#firstPage/no-artist"><button class="red" onclick="noClicked()">No <span class="glyphicon glyphicon-remove"></span></button></a><a class="active" onclick="addToDatabase(); innerVisualize();" href="#firstPage/visualize"><button>Yes <span class="glyphicon glyphicon-ok"></span></button></a>'
 }
 function noResult(){
 	result.innerHTML = '<div><h2>No result found</h2></div>'
@@ -446,3 +446,23 @@ function selectAll(){
 	document.getElementById('cb3').checked = true;
 	document.getElementById('cb4').checked = true;
 }
+
+function innerVisualize(){
+	visualizeInner = document.getElementById('visualizeInner');
+	visualizeInner.innerHTML = '<div class="row">\
+					<div class="intro">\
+						<h2>'+resultArtist['artist']+' can be written in many ways, Reasyrch will do this for you.</h2>\
+						<h3>Do you want to see what names Reasyrch will search for?</h3>\
+						<div id="buttons">\
+							<a onclick="visualizeFuzzy()"><button>Yes show me <span class="glyphicon glyphicon-search"></span></button></a>	\
+							<a href="#firstPage/nationality"><button>No continue <span class="glyphicon glyphicon-chevron-right"></button></a>\
+						</div>\
+						<div id="mynetwork"></div>\
+					</div>\
+				</div>'
+}
+
+
+
+
+
