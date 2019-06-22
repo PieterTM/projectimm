@@ -96,7 +96,7 @@
 						<h2 style="display: inline-block;">From which artist is the artwork? <div class="tooltip"><span style="font-size: 16px; vertical-align: top;" class="glyphicon glyphicon-info-sign"><span class="tooltiptext">Tell us from who the artwork is, if you don't know, just enter nothing and skip the question.</span></span></div></h2>
 						<div class="inner-form">
 			         		<div class="input-field second-wrap">
-			           			<input type="text" placeholder="e.g. Vincent van Gogh" id="searchartist">
+			           			<input type="text" placeholder="e.g. Vincent van Gogh..." id="searchartist">
 			         		</div>
 			       		</div>
 						<a href="#firstPage/databases"><button class="red"><span class="glyphicon glyphicon-chevron-left"></span> Previous step</button></a>
@@ -142,6 +142,22 @@
 							</div>
 						</div>
 						<a href="#firstPage/visualize"><button class="red"><span class="glyphicon glyphicon-chevron-left"></span> Previous step</button></a>
+						<a href="#firstPage/title" class="active"><button>Continue <span class="glyphicon glyphicon-chevron-right"></span></button></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="slide" id="title" data-anchor="title">
+			<div class="container">
+	  			<div class="row">
+					<div class="intro">
+						<h2 style="display: inline-block;">What is the title of the artwork? <div class="tooltip"><span style="font-size: 16px; vertical-align: top;" class="glyphicon glyphicon-info-sign"><span class="tooltiptext">Tell us what the artwork is called, if you don't know, just enter nothing and skip the question.</span></span></div></h2>
+						<div class="inner-form">
+			         		<div class="input-field second-wrap">
+			           			<input type="text" placeholder="Title of artwork..." id="artworktitle">
+			         		</div>
+			       		</div>
+						<a href="#firstPage/nationality"><button class="red"><span class="glyphicon glyphicon-chevron-left"></span> Previous step</button></a>
 						<a href="#firstPage/search" class="active"><button>Continue <span class="glyphicon glyphicon-chevron-right"></span></button></a>
 					</div>
 				</div>
@@ -157,7 +173,81 @@
 			           			<input type="text" placeholder="Name of the previous owner..." id="previousowner">
 			         		</div>
 			       		</div>
-						<a href="#firstPage/nationality"><button class="red"><span class="glyphicon glyphicon-chevron-left"></span> Previous step</button></a>
+						<a href="#firstPage/title"><button class="red"><span class="glyphicon glyphicon-chevron-left"></span> Previous step</button></a>
+						<a href="#firstPage/shape" class="active"><button>Continue <span class="glyphicon glyphicon-chevron-right"></span></button></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="slide" id="shape" data-anchor="shape">
+			<div class="container">
+					<div class="row">
+					<div class="intro">
+						<h2>What is the shape of the artwork?</h2>
+						<div style="margin: 20px; margin-left: 50px;">
+							<div class="shapes" id="shapes">
+								<div class="square-question-mark" id="square-question-mark" style="display:inline-block;"></div>
+								<div class="square" id="square"></div>
+								<div class="circle" id="circle"></div>
+								<div class="oval" id="oval"></div>
+								<div class="rectangle" id="rectangle"></div>
+								<div class="parallelogram" id="parallelogram"></div>
+								<div class="trapezoid" id="trapezoid"></div>
+								<div class="triangle-up" id="triangle-up"></div>
+								<div class="triangle-down" id="triangle-down"></div>
+								<div class="triangle-left" id="triangle-left"></div>
+								<div class="triangle-right" id="triangle-right"></div>
+							</div>
+							<select id="selectShape" name="shape-option" style="padding: 10px 12px; font-size: 18px; line-height: normal; height: 50px;" onchange="displayShape();">
+								<option value="" disabled selected style="display: none;">Select a shape</option>
+								<option value="square">Square</option>
+								<option value="circle">Circle</option>
+								<option value="oval">Oval</option>
+								<option value="rectangle">Rectangle</option>
+								<option value="parallelogram">Parallelogram</option>
+								<option value="trapezoid">Trapezoid</option>
+								<option value="triangle-up">Triangle Up</option>
+								<option value="triangle-down">Triangle Down</option>
+								<option value="triangle-left">Triangle Left</option>
+								<option value="triangle-right">Triangle Right</option>
+								<option value="other">Other</option>
+							</select>
+							<div class="inner-form" id="inputShape" style="display: none; margin-top: 0;">
+								<input type="text" name="shape-option" placeholder="Enter a shape..." style="padding: 10px 12px; font-size: 18px; line-height: normal; height: 50px; width:100%;">
+							</div>
+						</div>
+						<a href="#firstPage/search"><button class="red"><span class="glyphicon glyphicon-chevron-left"></span> Previous step</button></a>
+						<a href="#firstPage/size" class="active"><button>Continue <span class="glyphicon glyphicon-chevron-right"></span></button></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="slide" id="size" data-anchor="size">
+			<div class="container">
+					<div class="row">
+					<div class="intro">
+						<h2>What is the size of the artwork?</h2>
+						<div style="margin: 20px; margin-left: 50px;">
+							<div class="unit-length">
+								<input type="number" id="length" style="padding: 10px 12px; font-size: 18px; line-height: normal; height: 50px;" name="length" placeholder="length...">
+								<select class="unit">
+									<option value="millimeter">mm</option>
+									<option value="centimeter">cm</option>
+									<option value="inch">in (")</option>
+									<option value="pixel">px</option>
+								</select>
+							</div>
+							<div class="unit-width">
+								<input type="number" id="width" style="padding: 10px 12px; font-size: 18px; line-height: normal; height: 50px;" name="width" placeholder="width...">
+								<select class="unit">
+									<option value="millimeter">mm</option>
+									<option value="centimeter">cm</option>
+									<option value="inch">in (")</option>
+									<option value="pixel">px</option>
+								</select>
+							</div>
+						</div>
+						<a href="#firstPage/shape"><button class="red"><span class="glyphicon glyphicon-chevron-left"></span> Previous step</button></a>
 						<a href="#firstPage/price" class="active"><button>Continue <span class="glyphicon glyphicon-chevron-right"></span></button></a>
 					</div>
 				</div>
@@ -175,9 +265,20 @@
 								  <option value="opel">£</option>
 								  <option value="audi">¥</option>
 							</select>
-							<input style="padding: 10px 12px; font-size: 18px; line-height: normal; height: 49px;" type="text" id="price" placeholder="e.g. 1471249">
+							<input style="padding: 10px 12px; font-size: 18px; line-height: normal; height: 49px;" type="text" id="price" placeholder="e.g. 1471249...">
 						</div>
-						<a href="#firstPage/search"><button class="red"><span class="glyphicon glyphicon-chevron-left"></span> Previous step</button></a>
+						<a href="#firstPage/size"><button class="red"><span class="glyphicon glyphicon-chevron-left"></span> Previous step</button></a>
+						<a href="#firstPage/more" class="active"><button>Continue <span class="glyphicon glyphicon-chevron-right"></span></button></a>
+					</div>
+				</div>
+			</div>
+		</div>				
+		<div class="slide" id="more" data-anchor="more">
+			<div class="container">
+	  			<div class="row">
+					<div class="intro">
+						<h2>There will be more quesitons about the artwork here...</h2>
+						<a href="#firstPage/price"><button class="red"><span class="glyphicon glyphicon-chevron-left"></span> Previous step</button></a>
 						<a href="#firstPage/results" class="active"><button onclick="generateResults()">Search <span class="glyphicon glyphicon-search"></span></button></a>
 					</div>
 				</div>

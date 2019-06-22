@@ -178,12 +178,6 @@ function addToDatabase(){
 	.catch(function(error) {
 	    console.error("Error adding document: ", error);
 	});
-	nextSlide();
-}
-
-function nextSlide(){
-	var nationalityDiv = document.getElementById('nationality');
-	nationalityDiv.innerHTML = 'Great, you helped 312289 people by providing your way of writing ' + resultArtist['artist'] + ' to our database!';
 }
 
 function createResult(){
@@ -206,12 +200,10 @@ function noResult(){
 
 function visualizeFuzzy(){
 	// create connections between people
-
 	edges = [];
 	for(var i =2; i<=window.fuzzyNamez.length; i++){
 	edges.push({from: 1, to: i});
 	}
-
 	var container = document.getElementById('mynetwork');
 	container.style.height = "60vh";
 	var data = {
@@ -460,6 +452,111 @@ function innerVisualize(){
 						<div id="mynetwork"></div>\
 					</div>\
 				</div>'
+}
+function displayShape() {
+		var selectShape = document.getElementById('selectShape');
+		var selectedValue = selectShape.options[selectShape.selectedIndex].value;
+		var unselectedShape = document.getElementById('square-question-mark');
+		var selectedShape = document.getElementById('square');
+		var shapeValue = selectedShape.getAttribute('id');
+		if (selectedValue == shapeValue) {
+			selectedShape.style.display = 'inline-block';
+			unselectedShape.style.display = 'none';
+		}
+		else {
+			selectedShape.style.display = 'none';
+		}
+		var selectedShape = document.getElementById('circle');
+		var shapeValue = selectedShape.getAttribute('id');
+		if (selectedValue == shapeValue) {
+			selectedShape.style.display = 'inline-block';
+			unselectedShape.style.display = 'none';
+		}
+		else {
+			selectedShape.style.display = 'none';
+		}
+		var selectedShape = document.getElementById('oval');
+		var shapeValue = selectedShape.getAttribute('id');
+		if (selectedValue == shapeValue) {
+			selectedShape.style.display = 'inline-block';
+			unselectedShape.style.display = 'none';
+		}
+		else {
+			selectedShape.style.display = 'none';
+		}
+		var selectedShape = document.getElementById('rectangle');
+		var shapeValue = selectedShape.getAttribute('id');
+		if (selectedValue == shapeValue) {
+			selectedShape.style.display = 'inline-block';
+			unselectedShape.style.display = 'none';
+		}
+		else {
+			selectedShape.style.display = 'none';
+		}
+		var selectedShape = document.getElementById('parallelogram');
+		var shapeValue = selectedShape.getAttribute('id');
+		if (selectedValue == shapeValue) {
+			selectedShape.style.display = 'inline-block';
+			unselectedShape.style.display = 'none';
+		}
+		else {
+			selectedShape.style.display = 'none';
+		}
+		var selectedShape = document.getElementById('trapezoid');
+		var shapeValue = selectedShape.getAttribute('id');
+		if (selectedValue == shapeValue) {
+			selectedShape.style.display = 'inline-block';
+			unselectedShape.style.display = 'none';
+		}
+		else {
+			selectedShape.style.display = 'none';
+		}
+		var selectedShape = document.getElementById('triangle-up');
+		var shapeValue = selectedShape.getAttribute('id');
+		if (selectedValue == shapeValue) {
+			selectedShape.style.display = 'inline-block';
+			unselectedShape.style.display = 'none';
+		}
+		else {
+			selectedShape.style.display = 'none';
+		}
+		var selectedShape = document.getElementById('triangle-down');
+		var shapeValue = selectedShape.getAttribute('id');
+		if (selectedValue == shapeValue) {
+			selectedShape.style.display = 'inline-block';
+			unselectedShape.style.display = 'none';
+		}
+		else {
+			selectedShape.style.display = 'none';
+		}
+		var selectedShape = document.getElementById('triangle-left');
+		var shapeValue = selectedShape.getAttribute('id');
+		if (selectedValue == shapeValue) {
+			selectedShape.style.display = 'inline-block';
+			unselectedShape.style.display = 'none';
+		}
+		else {
+			selectedShape.style.display = 'none';
+		}
+		var selectedShape = document.getElementById('triangle-right');
+		var shapeValue = selectedShape.getAttribute('id');
+		if (selectedValue == shapeValue) {
+			selectedShape.style.display = 'inline-block';
+			unselectedShape.style.display = 'none';
+		}
+		else {
+			selectedShape.style.display = 'none';
+		}
+
+		var inputShape = document.getElementById('inputShape');
+		if (selectedValue == 'other' ) {
+			inputShape.style.display='block';
+			unselectedShape.style.display = 'inline-block';
+			unselectedShape.style.color = 'transparent';
+		}
+		else {
+			inputShape.style.display = 'none';
+		}
 }
 
 
